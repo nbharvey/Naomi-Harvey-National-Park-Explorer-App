@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -16,7 +18,7 @@ public class Book {
     private String title;
     private String author;
     private String spineColor;
-    private String status;
+    private List<String> genres;
     private String description;
     //user submitted book recs
     private String note;

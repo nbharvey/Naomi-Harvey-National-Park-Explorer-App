@@ -1,4 +1,4 @@
 package com.example.demo.controllers;
 
-public class ShelfController {
+public class GenreController {
 }

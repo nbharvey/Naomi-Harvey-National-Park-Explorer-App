@@ -1,4 +1,4 @@
 package com.example.demo.models;
 
-public class Shelf {
+public class Genre {
 }
