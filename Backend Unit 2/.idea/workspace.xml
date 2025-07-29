@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a3d32728-89ea-4294-bffa-f09b108837c0" name="Changes" comment="implemented BookService">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Unit2FinalProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controllers/GenreController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/Genre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/GenreRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/GenreService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/Unit2FinalProjectApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/NPE/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/NPE/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/NPE/src/features/bookshelf/useBooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/NPE/src/features/bookshelf/useBooks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/NPE/src/utils/localStorage.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nbharvey&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nbharvey/Naomi-Harvey-Unit-2-Final-Project.git&quot;,
+    &quot;accountId&quot;: &quot;a8c62871-d451-45c9-8d6e-ccff4bf065c6&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2zh0dDFMYUJysLrWbzrUnAoHybj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Unit2FinalProjectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/naomiharvey/Documents/launchCode2/Naomi-Harvey-Unit-2-Final-Project/Backend Unit 2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/demo" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3d32728-89ea-4294-bffa-f09b108837c0" name="Changes" comment="" />
+      <created>1752168083333</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752168083333</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initialized Spring Boot project">
+      <option name="closed" value="true" />
+      <created>1752168132828</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752168132828</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated with mysql connection">
+      <option name="closed" value="true" />
+      <created>1752168667655</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752168667655</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Book and Shelf model skeleton">
+      <option name="closed" value="true" />
+      <created>1752168830434</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752168830434</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added BookRepository and ShelfRepository interface skeletons">
+      <option name="closed" value="true" />
+      <created>1752168909069</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752168909069</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added BookController and ShelfController controller skeletons">
+      <option name="closed" value="true" />
+      <created>1752168965140</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752168965140</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implemented Book entity based on fields in React app, also imported Lombok">
+      <option name="closed" value="true" />
+      <created>1752172041398</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752172041398</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implemented BookRepository interface">
+      <option name="closed" value="true" />
+      <created>1752172347129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752172347129</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Created primary key Long id; to let my backend generate the id">
+      <option name="closed" value="true" />
+      <created>1752172598077</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752172598077</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Adds CRUD endpoints to BookController for managing books">
+      <option name="closed" value="true" />
+      <created>1752610865739</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752610865739</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changed shelf classes to  genre classes, changed status to genres in Book class">
+      <option name="closed" value="true" />
+      <created>1753144330069</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1753144330069</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implemented GenreRepository by extending JpaRepository">
+      <option name="closed" value="true" />
+      <created>1753289380161</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1753289380161</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Deleted files I was using to practice Spring Security Auth">
+      <option name="closed" value="true" />
+      <created>1753289403992</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1753289403992</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Implemented Genre entity">
+      <option name="closed" value="true" />
+      <created>1753289468858</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1753289468858</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added entity annotation to genre entity">
+      <option name="closed" value="true" />
+      <created>1753290485028</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1753290485028</updated>
+    </task>
+    <task id="LOCAL-00015" summary="created a GenreService file">
+      <option name="closed" value="true" />
+      <created>1753294085971</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1753294085971</updated>
+    </task>
+    <task id="LOCAL-00016" summary="implemented GenreController">
+      <option name="closed" value="true" />
+      <created>1753294403368</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1753294403368</updated>
+    </task>
+    <task id="LOCAL-00017" summary="implemented BookService">
+      <option name="closed" value="true" />
+      <created>1753300207454</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1753300207454</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initialized Spring Boot project" />
+    <MESSAGE value="Updated with mysql connection" />
+    <MESSAGE value="Added Book and Shelf model skeleton" />
+    <MESSAGE value="Added BookRepository and ShelfRepository interface skeletons" />
+    <MESSAGE value="Added BookController and ShelfController controller skeletons" />
+    <MESSAGE value="Implemented Book entity based on fields in React app, also imported Lombok" />
+    <MESSAGE value="Implemented BookRepository interface" />
+    <MESSAGE value="Created primary key Long id; to let my backend generate the id" />
+    <MESSAGE value="Adds CRUD endpoints to BookController for managing books" />
+    <MESSAGE value="Changed shelf classes to  genre classes, changed status to genres in Book class" />
+    <MESSAGE value="Implemented GenreRepository by extending JpaRepository" />
+    <MESSAGE value="Deleted files I was using to practice Spring Security Auth" />
+    <MESSAGE value="Implemented Genre entity" />
+    <MESSAGE value="added entity annotation to genre entity" />
+    <MESSAGE value="created a GenreService file" />
+    <MESSAGE value="implemented GenreController" />
+    <MESSAGE value="added @ManyToMany annotation and @JoinTable to establish relationship between Book and Genre" />
+    <MESSAGE value="implemented BookService" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented BookService" />
+  </component>
+</project>

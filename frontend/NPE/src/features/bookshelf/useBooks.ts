@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
 import books from '../../../data/book_titles.json';
-import { getItem, setItem } from '../../utils/localStorage';
 import type { BookData } from '../../types';
 
 /**
