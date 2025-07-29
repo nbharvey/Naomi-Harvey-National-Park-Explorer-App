@@ -38,7 +38,10 @@ public class BookService {
     @Transactional
     public Book createBook(Book book, List<Long> genreIds) {
         if (genreIds != null && !genreIds.isEmpty()) {
-            List<Genre> foundGenres = genreRepository.findAllById(genreIds);
+            List<Integer> genreIdInts = genreIds.stream()
+                    .map(Long::intValue)
+                    .toList();
+            List<Genre> foundGenres = genreRepository.findAllById(genreIdInts);
             book.setGenres(new HashSet<>(foundGenres));
         }
         return bookRepository.save(book);
@@ -58,7 +61,10 @@ public class BookService {
             existingBook.setName(bookDetails.getName());
 
             if (genreIds != null && !genreIds.isEmpty()) {
-                List<Genre> foundGenres = genreRepository.findAllById(genreIds);
+                List<Integer> genreIdInts = genreIds.stream()
+                        .map(Long::intValue)
+                                .toList();
+                List<Genre> foundGenres = genreRepository.findAllById(genreIdInts);
                 existingBook.setGenres(new HashSet<>(foundGenres));
             }
 

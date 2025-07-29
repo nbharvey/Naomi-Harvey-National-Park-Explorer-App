@@ -4,13 +4,13 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-@Getter
-@Setter
-@Entity
+
 @Data
-
+@Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,16 @@ public class Book {
     private String title;
     private String author;
     private String spineColor;
-    private List<String> genres;
     private String description;
     //user submitted book recs
     private String note;
     private String name;
+@ManyToMany
+@JoinTable(
+        name = "book_genres",
+        joinColumns = @JoinColumn(name = "book_id"),
+        inverseJoinColumns = @JoinColumn(name = "genre_id")
+)
+    private Set<Genre> genres = new HashSet<>();
+
 }
