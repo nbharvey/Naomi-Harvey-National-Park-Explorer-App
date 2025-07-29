@@ -1,0 +1,162 @@
+[
+  {
+    "id": "1",
+    "title": "Desert Solitaire: A Season in the Wilderness",
+    "author": "Edward Abbey",
+    "spineColor": "#99b27f",
+    "genres": ["Memoir"],
+    "description": "A series of essays about the author's experiences as a park ranger in southeastern Utah, reflecting on the beauty of the desert and the impact of human intervention."
+  },
+  {
+    "id": "2",
+    "title": "The Hour of Land: A Personal Topography of America's National Parks",
+    "author": "Terry Tempest Williams",
+    "spineColor": "#eeedbe",
+    "genres": ["Memoir", "Natural History"],
+    "description": "A collection of essays exploring the importance of America's national parks, blending personal narrative with natural history and politics."
+  },
+  {
+    "id": "3",
+    "title": "The Wild Muir: Twenty-Two of John Muir's Greatest Adventures",
+    "author": "Lee Stetson",
+    "spineColor": "#e79e85",
+    "genres": ["Adventure Fiction"],
+    "description": "A collection of John Muir's most exciting writings, detailing his adventures in the Sierra Nevada and his advocacy for wilderness preservation."
+  },
+  {
+    "id": "4",
+    "title": "Leave It As It Is: A Journey Through Theodore Roosevelt's American Wilderness",
+    "author": "David Gessner",
+    "spineColor": "#bb5a5a",
+    "genres": ["History", "Travel"],
+    "description": "A travelogue that follows in the footsteps of Theodore Roosevelt, exploring the lands he helped protect and his legacy as a conservationist."
+  },
+  {
+    "id": "5",
+    "title": "Ranger Confidential: Living, Working, And Dying In The National Parks",
+    "author": "Andrea Lankford",
+    "spineColor": "#58727f",
+    "genres": ["Memoir"],
+    "description": "An insider's look at the realities of life as a National Park Service ranger, from dramatic rescues to the daily challenges of the job."
+  },
+  {
+    "id": "6",
+    "title": "Grand Canyon: The Complete Guide",
+    "author": "James Kaiser",
+    "spineColor": "#83afa6",
+    "genres": ["Travel"],
+    "description": "A comprehensive guidebook filled with tips, maps, and detailed information for planning a trip to the Grand Canyon."
+  },
+  {
+    "id": "7",
+    "title": "The National Parks: America's Best Idea",
+    "author": "Dayton Duncan and Ken Burns",
+    "spineColor": "#ed9f66",
+    "genres": ["History"],
+    "description": "The companion book to the acclaimed documentary series, detailing the history and significance of the National Park System."
+  },
+  {
+    "id": "8",
+    "title": "A Walk in the Woods: Rediscovering America on the Appalachian Trail",
+    "author": "Bill Bryson",
+    "spineColor": "#ea8a8a",
+    "genres": ["Memoir", "Travel"],
+    "description": "A humorous account of the author's attempt to hike the Appalachian Trail, which passes through several national parks."
+  },
+  {
+    "id": "9",
+    "title": "The Last Season",
+    "author": "Eric Blehm",
+    "spineColor": "#6e7da2",
+    "genres": ["Biography", "Survival"],
+    "description": "The true story of the disappearance of a veteran park ranger in California's Sequoia and Kings Canyon National Parks."
+  },
+  {
+    "id": "10",
+    "title": "Death in Yellowstone: Accidents and Foolhardiness in the First National Park",
+    "author": "Lee H. Whittlesey",
+    "spineColor": "#8b4513",
+    "genres": ["History"],
+    "description": "A sobering look at the various dangers present in Yellowstone, chronicling documented deaths since its establishment."
+  },
+  {
+    "id": "11",
+    "title": "Down the Great Unknown: John Wesley Powell's 1869 Journey",
+    "author": "Edward Dolnick",
+    "spineColor": "#2e8b57",
+    "genres": ["Adventure Fiction", "History"],
+    "description": "Recounts the harrowing first expedition down the Colorado River through the Grand Canyon, led by John Wesley Powell."
+  },
+  {
+    "id": "12",
+    "title": "The Yosemite",
+    "author": "John Muir",
+    "spineColor": "#f5deb3",
+    "genres": ["Natural History"],
+    "description": "A classic collection of essays by John Muir celebrating the beauty and wonder of Yosemite National Park."
+  },
+  {
+    "id": "13",
+    "title": "Lassoing the Sun: A Year in America's National Parks",
+    "author": "Mark Woods",
+    "spineColor": "#efbfc6",
+    "genres": ["Memoir", "Travel"],
+    "description": "A journalist's journey through the national parks for a year, exploring their future on the centennial of the National Park Service."
+  },
+  {
+    "id": "14",
+    "title": "Where the Deer and the Antelope Play",
+    "author": "Nick Offerman",
+    "spineColor": "#f4a460",
+    "genres": ["Memoir", "Travel"],
+    "description": "A humorous and insightful look at the author's travels through America's parks and his thoughts on conservation and the outdoors."
+  },
+  {
+    "id": "15",
+    "title": "Wild: From Lost to Found on the Pacific Crest Trail",
+    "author": "Cheryl Strayed",
+    "spineColor": "#cd853f",
+    "genres": ["Memoir", "Survival"],
+    "description": "A powerful memoir about a woman's solo hike along the Pacific Crest Trail following personal tragedy, passing through several national parks and forests."
+  },
+  {
+    "id": "16",
+    "title": "The Emerald Mile",
+    "author": "Kevin Fedarko",
+    "spineColor": "#8cbeaa",
+    "genres": ["Adventure Fiction", "History"],
+    "description": "The epic story of the fastest boat ride in history through the Grand Canyon, set against the backdrop of the canyon's history and lore."
+  },
+  {
+    "id": "17",
+    "title": "Subpar Parks: America's Most Extraordinary National Parks and Their Least Impressed Visitors",
+    "author": "Amber Share",
+    "spineColor": "#4682b4",
+    "genres": ["Travel"],
+    "description": "A collection of beautiful illustrations of national parks paired with hilarious one-star reviews from unimpressed visitors."
+  },
+  {
+    "id": "18",
+    "title": "Moon USA National Parks: The Complete Guide to All 63 Parks",
+    "author": "Becky Lomax",
+    "spineColor": "#bb5a5a",
+    "genres": ["Travel"],
+    "description": "A comprehensive travel guide covering all 63 U.S. national parks with strategies, itineraries, and tips for every visitor."
+  },
+  {
+    "id": "19",
+    "title": "Pilgrim at Tinker Creek",
+    "author": "Annie Dillard",
+    "spineColor": "#8cbeaa",
+    "genres": ["Memoir", "Natural History"],
+    "description": "An exploration of the natural world in Virginia's Blue Ridge Mountains, near Shenandoah, reflecting on nature and spirituality."
+  },
+  {
+    "id": "20",
+    "title": "On Trails: An Exploration",
+    "author": "Robert Moor",
+    "spineColor": "#99b27f",
+    "genres": ["Exploration", "Natural History"],
+    "description": "A deep dive into the history, science, and philosophy of trails, from animal paths to hiking trails in parks around the world."
+  }
+]

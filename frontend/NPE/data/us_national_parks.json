@@ -1,0 +1,443 @@
+[
+  {
+    "id": 1,
+    "park": "Acadia", 
+    "state": "Maine",
+    "established": "1919",
+    "popularAttraction": "Cadillac Mountain"
+  },
+  {
+    "id": 2,
+    "park": "Arches",
+    "state": "Utah",
+    "established": "1971",
+    "popularAttraction": "Delicate Arch"
+  },
+  {
+    "id": 3,
+    "park": "Badlands",
+    "state": "South Dakota",
+    "established": "1978",
+    "popularAttraction": "Badlands Loop Road"
+  },
+  {
+    "id": 4,
+    "park": "Big Bend", 
+    "state": "Texas",
+    "established": "1944",
+    "popularAttraction": "Santa Elena Canyon"
+  },
+  {
+    "id": 5,
+    "park": "Biscayne",
+    "state": "Florida",
+    "established": "1980",
+    "popularAttraction": "Boca Chita Key"
+  },
+  {
+    "id": 6,
+    "park": "Black Canyon of the Gunnison",
+    "state": "Colorado",
+    "established": "1999",
+    "popularAttraction": "South Rim Drive"
+  },
+  {
+    "id": 7,
+    "park": "Bryce Canyon",
+    "state": "Utah",
+    "established": "1928",
+    "popularAttraction": "Bryce Amphitheater"
+  },
+  {
+    "id": 8,
+    "park": "Canyonlands",
+    "state": "Utah",
+    "established": "1964",
+    "popularAttraction": "Mesa Arch"
+  },
+  {
+    "id": 9,
+    "park": "Capitol Reef",
+    "state": "Utah",
+    "established": "1971",
+    "popularAttraction": "Hickman Bridge"
+  },
+  {
+    "id": 10,
+    "park": "Carlsbad Caverns",
+    "state": "New Mexico",
+    "established": "1930",
+    "popularAttraction": "The Big Room"
+  },
+  {
+    "id": 11,
+    "park": "Channel Islands",
+    "state": "California",
+    "established": "1980",
+    "popularAttraction": "Sea Kayaking in Sea Caves"
+  },
+  {
+    "id": 12,
+    "park": "Congaree",
+    "state": "South Carolina",
+    "established": "2003",
+    "popularAttraction": "Boardwalk Loop Trail"
+  },
+  {
+    "id": 13,
+    "park": "Crater Lake",
+    "state": "Oregon",
+    "established": "1902",
+    "popularAttraction": "Rim Drive"
+  },
+  {
+    "id": 14,
+    "park": "Cuyahoga Valley",
+    "state": "Ohio",
+    "established": "2000",
+    "popularAttraction": "Brandywine Falls"
+  },
+  {
+    "id": 15,
+    "park": "Death Valley",
+    "state": "California and Nevada",
+    "established": "1994",
+    "popularAttraction": "Zabriskie Point"
+  },
+  {
+    "id": 16,
+    "park": "Denali",
+    "state": "Alaska",
+    "established": "1917",
+    "popularAttraction": "Denali Park Road"
+  },
+  {
+    "id": 17,
+    "park": "Dry Tortugas",
+    "state": "Florida",
+    "established": "1992",
+    "popularAttraction": "Fort Jefferson"
+  },
+  {
+    "id": 18,
+    "park": "Everglades",
+    "state": "Florida",
+    "established": "1934",
+    "popularAttraction": "Anhinga Trail"
+  },
+  {
+    "id": 19,
+    "park": "Gates of the Arctic",
+    "state": "Alaska",
+    "established": "1980",
+    "popularAttraction": "Wilderness Exploration"
+  },
+  {
+    "id": 20,
+    "park": "Gateway Arch",
+    "state": "Missouri",
+    "established": "2018",
+    "popularAttraction": "The Gateway Arch"
+  },
+  {
+    "id": 21,
+    "park": "Glacier",
+    "state": "Montana",
+    "established": "1910",
+    "popularAttraction": "Going-to-the-Sun Road"
+  },
+  {
+    "id": 22,
+    "park": "Glacier Bay",
+    "state": "Alaska",
+    "established": "1980",
+    "popularAttraction": "Margerie Glacier"
+  },
+  {
+    "id": 23,
+    "park": "Grand Canyon",
+    "state": "Arizona",
+    "established": "1919",
+    "popularAttraction": "Mather Point"
+  },
+  {
+    "id": 24,
+    "park": "Grand Teton",
+    "state": "Wyoming",
+    "established": "1929",
+    "popularAttraction": "Jenny Lake"
+  },
+  {
+    "id": 25,
+    "park": "Great Basin",
+    "state": "Nevada",
+    "established": "1986",
+    "popularAttraction": "Lehman Caves"
+  },
+  {
+    "id": 26,
+    "park": "Great Sand Dunes",
+    "state": "Colorado",
+    "established": "2004",
+    "popularAttraction": "High Dune"
+  },
+  {
+    "id": 27,
+    "park": "Great Smoky Mountains",
+    "state": "North Carolina, Tennessee",
+    "established": "1934",
+    "popularAttraction": "Cades Cove"
+  },
+  {
+    "id": 28,
+    "park": "Guadalupe Mountains",
+    "state": "Texas",
+    "established": "1966",
+    "popularAttraction": "Guadalupe Peak Trail"
+  },
+  {
+    "id": 29,
+    "park": "Haleakal\u0101",
+    "state": "Hawaii",
+    "established": "1916",
+    "popularAttraction": "Haleakal\u0101 Crater at Sunrise"
+  },
+  {
+    "id": 30,
+    "park": "Hawai\u02bbi Volcanoes",
+    "state": "Hawaii",
+    "established": "1916",
+    "popularAttraction": "K\u012blauea Caldera"
+  },
+  {
+    "id": 31,
+    "park": "Hot Springs",
+    "state": "Arkansas",
+    "established": "1921",
+    "popularAttraction": "Bathhouse Row"
+  },
+  {
+    "id": 32,
+    "park": "Indiana Dunes",
+    "state": "Indiana",
+    "established": "2019",
+    "popularAttraction": "West Beach"
+  },
+  {
+    "id": 33,
+    "park": "Isle Royale",
+    "state": "Michigan",
+    "established": "1940",
+    "popularAttraction": "Greenstone Ridge Trail"
+  },
+  {
+    "id": 34,
+    "park": "Joshua Tree",
+    "state": "California",
+    "established": "1994",
+    "popularAttraction": "Skull Rock"
+  },
+  {
+    "id": 35,
+    "park": "Katmai",
+    "state": "Alaska",
+    "established": "1918",
+    "popularAttraction": "Brooks Falls Bear Watching"
+  },
+  {
+    "id": 36,
+    "park": "Kenai Fjords",
+    "state": "Alaska",
+    "established": "1980",
+    "popularAttraction": "Exit Glacier"
+  },
+  {
+    "id": 37,
+    "park": "Kings Canyon",
+    "state": "California",
+    "established": "1940",
+    "popularAttraction": "General Grant Tree"
+  },
+  {
+    "id": 38,
+    "park": "Kobuk Valley",
+    "state": "Alaska",
+    "established": "1980",
+    "popularAttraction": "Great Kobuk Sand Dunes"
+  },
+  {
+    "id": 39,
+    "park": "Lake Clark",
+    "state": "Alaska",
+    "established": "1980",
+    "popularAttraction": "Crescent Lake"
+  },
+  {
+    "id": 40,
+    "park": "Lassen Volcanic",
+    "state": "California",
+    "established": "1916",
+    "popularAttraction": "Bumpass Hell Trail"
+  },
+  {
+    "id": 41,
+    "park": "Mammoth Cave",
+    "state": "Kentucky",
+    "established": "1941",
+    "popularAttraction": "Historic Tour"
+  },
+  {
+    "id": 42,
+    "park": "Mesa Verde",
+    "state": "Colorado",
+    "established": "1906",
+    "popularAttraction": "Cliff Palace"
+  },
+  {
+    "id": 43,
+    "park": "Mount Rainier",
+    "state": "Washington",
+    "established": "1899",
+    "popularAttraction": "Paradise Area"
+  },
+  {
+    "id": 44,
+    "park": "New River Gorge",
+    "state": "West Virginia",
+    "established": "2020",
+    "popularAttraction": "New River Gorge Bridge"
+  },
+  {
+    "id": 45,
+    "park": "North Cascades",
+    "state": "Washington",
+    "established": "1968",
+    "popularAttraction": "Diablo Lake"
+  },
+  {
+    "id": 46,
+    "park": "Olympic",
+    "state": "Washington",
+    "established": "1938",
+    "popularAttraction": "Hoh Rain Forest"
+  },
+  {
+    "id": 47,
+    "park": "Petrified Forest",
+    "state": "Arizona",
+    "established": "1962",
+    "popularAttraction": "Blue Mesa"
+  },
+  {
+    "id": 48,
+    "park": "Pinnacles",
+    "state": "California",
+    "established": "2013",
+    "popularAttraction": "Bear Gulch Cave Trail"
+  },
+  {
+    "id": 49,
+    "park": "Redwood",
+    "state": "California",
+    "established": "1968",
+    "popularAttraction": "Tall Trees Grove"
+  },
+  {
+    "id": 50,
+    "park": "Rocky Mountain",
+    "state": "Colorado",
+    "established": "1915",
+    "popularAttraction": "Trail Ridge Road"
+  },
+  {
+    "id": 51,
+    "park": "Saguaro",
+    "state": "Arizona",
+    "established": "1994",
+    "popularAttraction": "Cactus Forest Drive"
+  },
+  {
+    "id": 52,
+    "park": "Sequoia",
+    "state": "California",
+    "established": "1890",
+    "popularAttraction": "General Sherman Tree"
+  },
+  {
+    "id": 53,
+    "park": "Shenandoah",
+    "state": "Virginia",
+    "established": "1935",
+    "popularAttraction": "Skyline Drive"
+  },
+  {
+    "id": 54,
+    "park": "Theodore Roosevelt",
+    "state": "North Dakota",
+    "established": "1978",
+    "popularAttraction": "Scenic Loop Drive"
+  },
+  {
+    "id": 55,
+    "park": "Virgin Islands",
+    "state": "U.S. Virgin Islands",
+    "established": "1956",
+    "popularAttraction": "Trunk Bay"
+  },
+  {
+    "id": 56,
+    "park": "Voyageurs",
+    "state": "Minnesota",
+    "established": "1975",
+    "popularAttraction": "Kabetogama Lake"
+  },
+  {
+    "id": 57,
+    "park": "White Sands",
+    "state": "New Mexico",
+    "established": "2019",
+    "popularAttraction": "Dune Sledding"
+  },
+  {
+    "id": 58,
+    "park": "Wind Cave",
+    "state": "South Dakota",
+    "established": "1903",
+    "popularAttraction": "Natural Entrance Tour"
+  },
+  {
+    "id": 59,
+    "park": "Wrangell St. Elias",
+    "state": "Alaska",
+    "established": "1980",
+    "popularAttraction": "Kennecott Mines National Historic Landmark"
+  },
+  {
+    "id": 60,
+    "park": "Yellowstone",
+    "state": "Wyoming, Montana, Idaho",
+    "established": "1872",
+    "popularAttraction": "Old Faithful"
+  },
+  {
+    "id": 61,
+    "park": "Yosemite",
+    "state": "California",
+    "established": "1890",
+    "popularAttraction": "Yosemite Valley"
+  },
+  {
+    "id": 62,
+    "park": "Zion",
+    "state": "Utah",
+    "established": "1919",
+    "popularAttraction": "The Narrows"
+  },
+  {
+    "id": 63,
+    "park": "New River Gorge",
+    "state": "West Virginia",
+    "established": "2020",
+    "popularAttraction": "New River Gorge Bridge"
+  }
+]
