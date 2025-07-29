@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import books from '../../../data/book_titles.json';
+import axios from 'axios';
 import type { BookData } from '../../types';
 
 /**
@@ -8,6 +8,10 @@ import type { BookData } from '../../types';
  * @param booksPerShelf - The number of books to put on each shelf
  * @returns A 2D array representing the shelves
  */
+
+const API_URL = 'http://localhost:8080/books';
+
+//creates nested arrays of books to represent shelves
 function createShelf(b: BookData[], booksPerShelf: number) : BookData[][] {
     const shelves: BookData[][] = [];
     for (let i = 0; i < b.length; i += booksPerShelf) {
@@ -19,35 +23,9 @@ function createShelf(b: BookData[], booksPerShelf: number) : BookData[][] {
 // hook centralizes state and logic for managing bookshelf
 function useBooks() {
     const [currentBooks, setCurrentBooks] = useState<BookData[]>(() => {
-        try {
-            const item = getItem('currentBooks') as string | null;
-            
-            //load raw data
-            const rawData = item ? JSON.parse(item) : books;
-            
-            //map raw data to sanitize books
-            const sanitizedBooks = rawData.map((book: BookData) => ({
-                id: book.id || Date.now().toString(),
-                title: book.title || '',
-                author: book.author || '',
-                genres: Array.isArray(book.genres) ? book.genres : [],
-                description: book.description || '',
-                spineColor: book.spineColor || '#6B2F4E',
-                name: book.name || '',
-                isEditing: book.isEditing || false,
-                note: book.note || '',
-            }));
-            return sanitizedBooks; 
-        } catch (error) {
-            console.error("Failed to parse books from localStorage", error);
-            return books; // fallback to default books on error
-        }
+        
     });
 
-    // Effect to save the current books to localStorage whenever they change
-    useEffect(() => {
-        setItem('currentBooks', JSON.stringify(currentBooks));
-    }, [currentBooks]);
 
     // useMemo recalculates the shelves only when the currentBooks array changes
     const shelves = useMemo<BookData[][]>(() => {
