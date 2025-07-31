@@ -10,7 +10,7 @@ import { useMemo, useState } from "react";
 const AVAILABLE_GENRES = ["Adventure Fiction", "Mystery/Thriller", "Historical Fiction", "Romance", "Young Adult", "Autobiography", "Memoir", "Travel", "Exploration", "Natural History", "Survival", "History", "Biography"];
 
 const Bookshelf: React.FC = () => {
-    const { shelves, addOrUpdateBook, editingBook, deleteBook, updateBook } = useBooks();
+    const { shelves, addBook, editingBook, deleteBook, updateBook } = useBooks();
     
     //state for filtering books
     const [filteredGenre, setFilteredGenre] = useState<string[]>([]);
@@ -70,15 +70,16 @@ const Bookshelf: React.FC = () => {
                         ))}
                     </div>
 
+            /*****************TODO: ADJUST PROPS FOR ADD AND UPDATING BOOK */
                 <div className="pl-12 pr-10 pb-10">
                     {editingBook ? (
                         <Form
                             key={editingBook?.id || 'new-book-form'
                             }
-                            onFormSubmit={addOrUpdateBook}
+                            onFormSubmit={addBook}
                             book={editingBook} />
                     ) : (
-                        <Form onFormSubmit={addOrUpdateBook} />
+                        <Form onFormSubmit={updateBook} />
                     )}
                 </div>
         </>
