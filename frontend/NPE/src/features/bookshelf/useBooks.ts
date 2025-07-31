@@ -117,21 +117,37 @@ function useBooks() {
         return currentBooks.find((b) => b.name && b.isEditing) ?? null;
     }, [currentBooks]);
 
+    /**************************BEGIN OLD LOGIC******************************* */
     /**
      * Deletes a book from the state
      * @param bookToDelete - The book object to remove
      */
-    const deleteBook = (bookToDelete: BookData): void => {
-        setCurrentBooks((prevBooks) =>
-            prevBooks.filter((b) => b.id !== bookToDelete.id)
-        );
+    // const deleteBook = (bookToDelete: BookData): void => {
+    //     setCurrentBooks((prevBooks) =>
+    //         prevBooks.filter((b) => b.id !== bookToDelete.id)
+    //     );
+    // };
+    /**************************END OLD LOGIC************************ */
+
+    //delete book by making a DELETE request
+    const deleteBook = async (bookToDelete: BookData): Promise<void> => {
+        try {
+            await axios.delete(`${API_URL}/${bookToDelete.id}`);
+            //remove book from local state so UI updates instantly
+            setCurrentBooks((prevBooks) =>
+                prevBooks.filter((b) => b.id !== bookToDelete.id)
+            );
+        } catch (error) {
+            console.error("Failed to delete book", error);
+        }
     };
 
+    
     // Return the state and functions to be used by components
     return {
         currentBooks,
         shelves,
-        addOrUpdateBook,
+        addBook,
         updateBook,
         editingBook,
         deleteBook,
