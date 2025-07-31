@@ -1,17 +1,77 @@
-const MyParks = () => {
+import { useState } from "react";
 
-    return (
-        <div>
-            <h1 className="text-xl font-bold text-center">My Parks</h1>
-            <p>This page will start by prompting users to sign in or creating account. After sign-in, users will be on the MyParks page. At the top it will Welcome Explorer! Then say have a dropdwon menu on the left where they can choose what to do on this page.</p>
-            <ul>
-                <li>---Adventure Planner (this will have parks the user has saved from the explore parks tab. they can click into a park and say "create adventure". from there there will be a whole planning menu with dates, trip, and you can have cards from the park and place them in a calendar with drag and drop)</li>
-                <li>---Park Tracker (this will be achecklist where users can check off the parks that they have visited and write the date and other information, like a journal.)</li>
-                <li>---Packing List (will have a link to the NPE blog so users can check out common things to pack, it will have recommended items based on what kind of trip you are planning to the parks)</li>
-                <li>---I want the bookshelf to appear here, but be only user books. THey can add via the form, and I need it to be not only books but also resources and maps. The book spines could be different colors based on what is on the shelf, and a dropdown should appear to filter. I'm thinking that the user could add a link to the resource so when they sign on literally everything they need for planning is in their MyParks account.</li>
-            </ul>
+const MyParks = () => {
+  const [selectedSection, setSelectedSection] = useState("planner");
+
+  const renderSectionContent = () => {
+    switch (selectedSection) {
+      case "planner":
+        return (
+          <div>
+            <h2 className="text-xl font-bold mb-2">Adventure Planner</h2>
+            <p>View your saved parks and start planning your next adventure. Select a park to create a trip, add dates, and drag park activity cards into a calendar.</p>
+          </div>
+        );
+      case "tracker":
+        return (
+          <div>
+            <h2 className="text-xl font-bold mb-2">Park Tracker</h2>
+            <p>Check off parks you've visited, log visit dates, and write journal entries about your experiences.</p>
+          </div>
+        );
+      case "packing":
+        return (
+          <div>
+            <h2 className="text-xl font-bold mb-2">Packing List</h2>
+            <p>See packing recommendations and visit our <a href="/blog" className="text-green-700 underline">blog</a> for detailed guides based on your trip type.</p>
+          </div>
+        );
+      case "bookshelf":
+        return (
+          <div>
+            <h2 className="text-xl font-bold mb-2">Bookshelf</h2>
+            <p>Manage your personal planning shelf including books, maps, and resources. Items can be filtered by type and linked directly to external resources.</p>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="min-h-screen px-4 py-8 max-w-7xl mx-auto">
+      {/* Sign-in prompt placeholder */}
+      <div className="bg-yellow-100 border border-yellow-300 p-4 rounded mb-6">
+        <p className="text-center text-yellow-800">Please <a href="/login" className="underline font-bold">sign in</a> or <a href="/signup" className="underline font-bold">create an account</a> to access your MyParks dashboard.</p>
+      </div>
+
+      {/* Welcome & Layout */}
+      <h1 className="text-3xl font-bold text-center mb-8">Welcome, Explorer!</h1>
+      <div className="flex flex-col lg:flex-row gap-6">
+        
+        {/* Sidebar Dropdown Navigation */}
+        <div className="lg:w-1/4">
+          <label htmlFor="section-select" className="block text-sm font-medium mb-2">Navigate</label>
+          <select
+            id="section-select"
+            className="w-full border rounded px-3 py-2"
+            value={selectedSection}
+            onChange={(e) => setSelectedSection(e.target.value)}
+          >
+            <option value="planner">🗺️ Adventure Planner</option>
+            <option value="tracker">✅ Park Tracker</option>
+            <option value="packing">🎒 Packing List</option>
+            <option value="bookshelf">📚 Bookshelf</option>
+          </select>
         </div>
-    )
+
+        {/* Main Section Content */}
+        <div className="lg:w-3/4 bg-white shadow-md rounded-lg p-6">
+          {renderSectionContent()}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MyParks;

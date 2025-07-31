@@ -9,6 +9,7 @@ import type { BookData } from '../../types';
  * @returns A 2D array representing the shelves
  */
 
+//API base url for books endpoint
 const API_URL = 'http://localhost:8080/books';
 
 //creates nested arrays of books to represent shelves
@@ -22,9 +23,22 @@ function createShelf(b: BookData[], booksPerShelf: number) : BookData[][] {
 
 // hook centralizes state and logic for managing bookshelf
 function useBooks() {
-    const [currentBooks, setCurrentBooks] = useState<BookData[]>(() => {
-        
-    });
+    //start with empty array of books
+    const [currentBooks, setCurrentBooks] = useState<BookData[]>([]);
+
+    //fetch inital data from API upon mount
+    useEffect(() => {
+        const fetchBooks = async () => {
+            try {
+                const response = await axios.get(API_URL);
+                setCurrentBooks(response.data);
+            } catch (error) {
+                console.error("Failed to fetch books from API", error);
+            }
+        };
+
+        fetchBooks();
+    }, []);
 
 
     // useMemo recalculates the shelves only when the currentBooks array changes
@@ -36,35 +50,66 @@ function useBooks() {
      * Adds a new book or updates an existing one
      * @param book - The book object from the form
      */
-    const addOrUpdateBook = (book: BookData): void => {
-        const bookToSave = { ...book, isEditing: false };
 
-        if (!bookToSave.spineColor) {
-            bookToSave.spineColor = '#6B2F4E'; // Default spine color
-        }
-
-        // Check if a user-added book with the same ID already exists
-        const bookExists = currentBooks.some((b) => b.name && b.id === bookToSave.id);
-
-        if (bookExists) {
-            updateBook(bookToSave);
-        } else {
-            // Add the new book to the array
-            setCurrentBooks((prevBooks) => [...prevBooks, bookToSave]);
+    //adds new book by making a POST request
+    const addBook = async (newBookData: BookData): Promise<void> => {
+        try {
+            const response = await axios.post(API_URL, newBookData);
+            setCurrentBooks((prevBooks) => [...prevBooks, response.data]);
+        } catch (error) {
+            console.error("Failed to add book", error);
         }
     };
+
+    // updates book by making a PUT request
+    const updateBook = async (updatedBookData: BookData): Promise<void> => {
+        try {
+            const response = await axios.put(`${API_URL}/${updatedBookData.id}`, updatedBookData);
+            //find book in local state and replace with updated book
+            setCurrentBooks((prevBooks) =>
+                prevBooks.map((book) =>
+                    book.id === updatedBookData.id ? response.data : book
+                )
+            );
+        } catch (error) {
+            console.error("Failed to update book", error);
+        }
+    };
+
+
+    /**************************BEGIN OLD LOGIC************************ */
+    // const addOrUpdateBook = (book: BookData): void => {
+    //     const bookToSave = { ...book, isEditing: false };
+
+    //     if (!bookToSave.spineColor) {
+    //         bookToSave.spineColor = '#6B2F4E'; // Default spine color
+        // }
+
+        // Check if a user-added book with the same ID already exists
+        // const bookExists = currentBooks.some((b) => b.name && b.id === bookToSave.id);
+
+        // if (bookExists) {
+        //     updateBook(bookToSave);
+        // } else {
+            // Add the new book to the array
+    //         setCurrentBooks((prevBooks) => [...prevBooks, bookToSave]);
+    //     }
+    // };
 
     /**
      * Updates a specific book in the state
      * @param updatedBook - The book with updated properties
      */
-    const updateBook = (updatedBook: BookData): void => {
-        setCurrentBooks((prevBooks) =>
-            prevBooks.map(book =>
-                book.id === updatedBook.id ? { ...book, ...updatedBook } : book
-            )
-        );
-    };
+    // const updateBook = (updatedBook: BookData): void => {
+    //     setCurrentBooks((prevBooks) =>
+    //         prevBooks.map(book =>
+    //             book.id === updatedBook.id ? { ...book, ...updatedBook } : book
+    //         )
+    //     );
+    // };
+    /**************************END OLD LOGIC************************ */
+
+
 
     // useMemo to find the book currently being edited.
     // Returns the book object or null if no book is being edited.
