@@ -11,7 +11,7 @@ const Bookshelf: React.FC = () => {
     const { shelves, currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
     
     //state for filtering books by genre name
-    const [filteredGenre, setFilteredGenre] = useState<string[]>([]);
+    const [filteredGenres, setFilteredGenres] = useState<string[]>([]);
 
     //state for all possible genres fetched from API
     const [allGenres, setAllGenres] = useState<Genre[]>([]);
@@ -30,25 +30,32 @@ const Bookshelf: React.FC = () => {
     }, []);
 
     const handleGenreFilter = (genreName: string) => {
-        setFilteredGenre(prev =>
-            prev.includes(genre)
+        setFilteredGenres(prev =>
+            prev.includes(genreName)
                 ? prev.filter(g => g !== genre)
-                : [...prev, genre]
+                : [...prev, genreName]
         );
     };
 
+    const displayedBooks = useMemo(() => {
+        if (filteredGenres.length === 0) {
+            return currentBooks;
+        }
+        return currentBooks.filter(book =>
+            filteredGenres.some(filteredGenreName =>
+                book.genre.some(bookGenre => bookGenre.name === filteredGenreName)
+            )
+        );
+    }, [currentBooks, filteredGenres]);
+
     //useMemo recalculates shelves to display by genre
     const displayedShelves = useMemo(() => {
-        if (filteredGenre.length === 0) {
-            return shelves;
-        } else {
-            return shelves.map(shelf =>
-                shelf.filter(book =>
-                    filteredGenre.some(genre =>
-                        book.genres?.includes(genre))
-                ));
+        const shelves: BookData[][] = [];
+        for (let i = 0; i < displayedBooks.length; i += 8) {
+            shelves.push(displayedBooks.slice(i, i + 8));
         }
-        }, [shelves, filteredGenre]);
+        return shelves;
+    }, [displayedBooks]);
 
 
 
