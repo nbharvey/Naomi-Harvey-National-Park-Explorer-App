@@ -6,9 +6,6 @@ import type { Genre } from '../../types';
 import type { NewBookData } from '../../types';
 import type { FormProps } from '../../types';
 
-
-
-
 const createDefaultBook = (): BookData => ({
     title: '',
     author: '',

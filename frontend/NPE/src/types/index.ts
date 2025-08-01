@@ -6,8 +6,8 @@ export interface Genre {
 
 //FormProps for Form component
 export interface FormProps {
-  book?: BookData; 
-  onFormSubmit: (bookData: BookData) => void;
+  book?: Partial<BookData>; 
+  onFormSubmit: (bookData: NewBookData) => void;
 }
 
 //represents a complete Book object as exists in the db
