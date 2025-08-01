@@ -8,9 +8,9 @@ import type { BookData } from "../../types";
 import { useMemo, useState } from "react";
 
 const Bookshelf: React.FC = () => {
-    const { shelves, addBook, editingBook, deleteBook, updateBook } = useBooks();
+    const { shelves, currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
     
-    //state for filtering books
+    //state for filtering books by genre name
     const [filteredGenre, setFilteredGenre] = useState<string[]>([]);
 
     const handleGenreFilter = (genre: string) => {
