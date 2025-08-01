@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CustomButton } from '../../components/CustomButton';
 import type { BookData } from '../../types';
 import '../../index.css'; 
 import type { Genre } from '../../types';
 import type { NewBookData } from '../../types';
 import type { FormProps } from '../../types';
+import axios from 'axios';
 
 const createDefaultBook = () => ({
     title: '',
@@ -20,6 +21,18 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
     const [allGenres, setAllGenres] = useState<Genre[]>([]);
     const [selectedGenreIds, selectedGenreIds] = useState<number[]>([]);
 
+    //fetch all available genres from backend when component loads
+    useEffect(() => {
+        const fetchGenres = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/genres');
+                setAllGenres(response.data);
+            } catch (error) {
+                console.error('Error fetching genres:', error);
+            }
+        };
+        fetchGenres();
+    }, []);
     
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
