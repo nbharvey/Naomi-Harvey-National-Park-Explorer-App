@@ -22,7 +22,7 @@ export interface BookData {
     id: number;
     title: string;
     author: string;
-    genre: Genre[];
+    genres: Genre[];
     description: string;
     spineColor: string;
     name?: string;

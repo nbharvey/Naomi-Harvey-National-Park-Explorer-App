@@ -13,7 +13,7 @@ const Bookshelf: React.FC = () => {
     const { currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
     
     //state for filtering books by genre name
-    const [filteredGenres, setFilteredGenres] = useState<string[]>([]);
+    const [filteredGenres, setFilteredGenres] = useState<string[]>([]);//begin by showing all genres
 
     //state for all possible genres fetched from API
     const [allGenres, setAllGenres] = useState<Genre[]>([]);
@@ -39,6 +39,7 @@ const Bookshelf: React.FC = () => {
         );
     };
 
+    //creates a new list that takes currentBOoks and filters to only included genres from filteredGenres state
     const displayedBooks = useMemo(() => {
         if (filteredGenres.length === 0) {
             return currentBooks;
