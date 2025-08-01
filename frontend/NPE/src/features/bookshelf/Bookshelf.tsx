@@ -5,7 +5,9 @@ import React, { useEffect } from "react";
 import useBooks from "./useBooks";
 import '../../index.css';
 import type { BookData } from "../../types";
+import type { NewBookData } from "../../types";
 import { useMemo, useState } from "react";
+import { generatePath } from "react-router-dom";
 
 const Bookshelf: React.FC = () => {
     const { shelves, currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
@@ -57,7 +59,12 @@ const Bookshelf: React.FC = () => {
         return shelves;
     }, [displayedBooks]);
 
-
+    //handler for update mode of form
+    const handleUpdateBook = (bookFormData: NewBookData) => {
+        if (editingBook) {
+            updateBook(editingBook.id, bookFormData);
+        }
+    };
 
     return (
         <>
@@ -70,7 +77,7 @@ const Bookshelf: React.FC = () => {
                 <div className="flex flex-wrap justify-center gap-8 p-8">
                     <BasicMenu
                         label="Sort Books By Genre"
-                        options={AVAILABLE_GENRES}
+                        options={allGenres.map(genre => genre.name)}
                         onSelect={(handleGenreFilter)
                         }
                     />
@@ -78,7 +85,7 @@ const Bookshelf: React.FC = () => {
         
                     <div className="p-10 b-black">
                         {/* map over filtered shelves to render */}
-                        {displayedShelves.map((shelfBooks: BookData[], index: number) => (
+                        {displayedShelves.map((shelfBooks, index) => (
                             <div key={index}
                                 className="border-4 bg-almond h-30 border-kobicha flex justify-start items-end"
                             >
