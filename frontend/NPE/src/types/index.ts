@@ -1,7 +1,13 @@
 //type for genre object being fetched from API
-interface Genre {
+export interface Genre {
   id: number;
   name: string;
+}
+
+//FormProps for Form component
+export interface FormProps {
+  book?: BookData; 
+  onFormSubmit: (bookData: BookData) => void;
 }
 
 //represents a complete Book object as exists in the db

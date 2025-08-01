@@ -3,14 +3,11 @@ import { CustomButton } from '../../components/CustomButton';
 import type { BookData } from '../../types';
 import '../../index.css'; 
 import type { Genre } from '../../types';
+import type { NewBookData } from '../../types';
+import type { FormProps } from '../../types';
 
 
 
-
-interface FormProps {
-    book?: BookData; 
-    onFormSubmit: (bookData: BookData) => void;
-}
 
 const createDefaultBook = (): BookData => ({
     title: '',
