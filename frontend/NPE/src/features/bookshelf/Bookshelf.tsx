@@ -7,8 +7,6 @@ import '../../index.css';
 import type { BookData } from "../../types";
 import { useMemo, useState } from "react";
 
-const AVAILABLE_GENRES = ["Adventure Fiction", "Mystery/Thriller", "Historical Fiction", "Romance", "Young Adult", "Autobiography", "Memoir", "Travel", "Exploration", "Natural History", "Survival", "History", "Biography"];
-
 const Bookshelf: React.FC = () => {
     const { shelves, addBook, editingBook, deleteBook, updateBook } = useBooks();
     

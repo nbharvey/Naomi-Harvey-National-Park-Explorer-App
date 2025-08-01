@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { CustomButton } from '../../components/CustomButton';
-import type { BookData } from '../../types';
 import '../../index.css'; 
 import type { Genre } from '../../types';
 import type { NewBookData } from '../../types';
 import type { FormProps } from '../../types';
 import axios from 'axios';
+import { CustomButton } from '../../components/CustomButton';
 
 const createDefaultBook = () => ({
     title: '',
@@ -36,7 +35,7 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
     
     //pre-populate the form when editing
     useEffect(() => {
-        if (book) {
+        if (book?.id) {
             setFormData({
                 title: book.title || '',
                 author: book.author || '',
@@ -45,8 +44,11 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                 description: book.description || '',
                 spineColor: book.spineColor || '',
             });
-        } else {
             setSelectedGenreIds(book.genres?.map(genre => genre.id) || []);
+        } else {
+            //reset form
+            setFormData(createDefaultBook());
+            setSelectedGenreIds([]);
         }
     }, [book]);
 
@@ -74,19 +76,17 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
             alert('Please select at least one genre.');
             return;
         }
-    };
+        //object that now matches NewBookData type
+        const bookToSubmit: NewBookData = {
+            ...formData,
+            genreIds: selectedGenreIds,
+         };
 
-    //object that now matches NewBookData type
-    const bookToSubmit: NewBookData = {
-        ...formData,
-        genreIds: selectedGenreIds,
-    };
+        onFormSubmit(bookToSubmit);
 
-    onFormSubmit(bookToSubmit);
-
-    //reset form data
-    setFormData(createDefaultBook());
-    setSelectedGenreIds([]);
+        //reset form data
+        setFormData(createDefaultBook());
+        setSelectedGenreIds([]);
 };
 
     return (
@@ -134,17 +134,16 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                     >
                     <label>What is the genre(s) for the book?<br /></label>
                     <div className="flex flex-wrap gap-4 mt-2">
-                        {AVAILABLE_GENRES.map((genre) => (
-                            <div key={genre}>
+                        {allGenres.map((genre) => (
+                            <div key={genre.id}>
                                 <input
                                     type="checkbox"
-                                    id={genre}
-                                    name={genre}
-                                    checked={formData.genres.includes(genre)}
-                                    onChange={handleChange}
+                                    id={`genre-${genre.id}`}
+                                    checked={selectedGenreIds.includes(genre.id)}
+                                    onChange={() => handleGenreChange(genre.id)}
                                     className="mr-2"
                                 />
-                                <label htmlFor={genre}>{genre}</label>
+                                <label htmlFor={`genre-${genre.id}`}>{genre.name}</label>
                             </div>
                         ))}
                     </div>
@@ -186,7 +185,7 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                     className="bg-kobicha"
                 >
                     <CustomButton type="submit">
-                        {formData.isEditing ? 'Save Changes' : 'Add Book'}
+                        {book?.id ? 'Save Changes' : 'Add Book'}
                     </CustomButton>
                 </div>
             </form>
