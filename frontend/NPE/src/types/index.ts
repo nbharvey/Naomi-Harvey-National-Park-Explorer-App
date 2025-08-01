@@ -4,10 +4,10 @@ interface Genre {
 }
 
 export interface BookData {
-    id: number | string;
+    id: number;
     title: string;
     author: string;
-    genres: string[];
+    genreIDs: number[];
     description: string;
     spineColor: string;
     name?: string;
