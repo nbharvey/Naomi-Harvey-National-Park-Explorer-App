@@ -68,7 +68,7 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
     };
     
     
-        const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (selectedGenreIds.length === 0) {
             alert('Please select at least one genre.');
@@ -76,7 +76,18 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
         }
     };
 
-    
+    //object that now matches NewBookData type
+    const bookToSubmit: NewBookData = {
+        ...formData,
+        genreIds: selectedGenreIds,
+    };
+
+    onFormSubmit(bookToSubmit);
+
+    //reset form data
+    setFormData(createDefaultBook());
+    setSelectedGenreIds([]);
+};
 
     return (
         <div>
