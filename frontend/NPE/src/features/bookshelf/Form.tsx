@@ -52,31 +52,31 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value, type } = e.target;
-        if (type === 'checkbox') {
-            const { checked } = e.target as HTMLInputElement;
-            setFormData(prevState => {
-                const newGenres = checked ? [...prevState.genres, name] : prevState.genres.filter(genre => genre !== name);
-                return { ...prevState, genres: newGenres };
-                });
-        } else {
-            setFormData(prevState => ({
-                ...prevState,
-                [name]: value,
-            }));
-        }
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
     };
 
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleGenreChange = (genreId: number) => {
+        setSelectedGenreIds(prevIds =>
+            prevIds.includes(genreId)
+                ? prevIds.filter(id => id !== genreId)
+                : [...prevIds, genreId]
+        );
+    };
+    
+    
+        const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (formData.genres.length === 0) { 
+        if (selectedGenreIds.length === 0) {
             alert('Please select at least one genre.');
             return;
         }
-        onFormSubmit(formData);
-        setFormData(createDefaultBook());
     };
+
+    
 
     return (
         <div>
