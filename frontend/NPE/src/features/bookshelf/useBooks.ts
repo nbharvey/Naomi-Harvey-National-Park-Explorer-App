@@ -52,9 +52,9 @@ function useBooks() {
      */
 
     //adds new book by making a POST request
-    const addBook = async (newBookData: BookData): Promise<void> => {
+    const addBook = async (bookData: NewBookData): Promise<void> => {
         try {
-            const response = await axios.post(API_URL, newBookData);
+            const response = await axios.post(API_URL, bookData);
             setCurrentBooks((prevBooks) => [...prevBooks, response.data]);
         } catch (error) {
             console.error("Failed to add book", error);
@@ -62,17 +62,30 @@ function useBooks() {
     };
 
     // updates book by making a PUT request
-    const updateBook = async (id: number, bookData: NewBookData): Promise<void> => {
+    const updateBook = async (bookToUpdate: BookData): Promise<void> => {
+        // create payload that the backend API expects
+        const payload: NewBookData = {
+            title: bookToUpdate.title,
+            author: bookToUpdate.author,
+            note: bookToUpdate.note,
+            name: bookToUpdate.name,
+            description: bookToUpdate.description,
+            spineColor: bookToUpdate.spineColor,
+            // convert array of genre objects into an array of IDs
+            genreIds: bookToUpdate.genres.map(g => g.id)
+        };
+    
         try {
-            const response = await axios.put(`${API_URL}/${id}`, bookData);
-            //find book in local state and replace with updated book
+            const response = await axios.put(`${API_URL}/${bookToUpdate.id}`, payload);
+            
+            // update  local state with  full book object returned from server
             setCurrentBooks((prevBooks) =>
-                prevBooks.map((book) =>
-                    book.id === id ? response.data : book
+                prevBooks.map(book =>
+                    book.id === bookToUpdate.id ? response.data : book
                 )
             );
         } catch (error) {
-            console.error("Failed to update book", error);
+            console.error("Failed to update book:", error);
         }
     };
 

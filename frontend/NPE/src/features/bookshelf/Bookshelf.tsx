@@ -10,7 +10,7 @@ import axios from "axios";
 import { useMemo, useState, useEffect } from "react";
 
 const Bookshelf: React.FC = () => {
-    const { shelves, currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
+    const { currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
     
     //state for filtering books by genre name
     const [filteredGenres, setFilteredGenres] = useState<string[]>([]);
@@ -45,7 +45,7 @@ const Bookshelf: React.FC = () => {
         }
         return currentBooks.filter(book =>
             filteredGenres.some(filteredGenreName =>
-                book.genre.some(bookGenre => bookGenre.name === filteredGenreName)
+                book.genres.some(bookGenre => bookGenre.name === filteredGenreName)
             )
         );
     }, [currentBooks, filteredGenres]);
@@ -62,10 +62,19 @@ const Bookshelf: React.FC = () => {
     //handler for update mode of form
     const handleUpdateBook = (bookFormData: NewBookData) => {
         if (editingBook) {
-            updateBook(editingBook.id, bookFormData);
+            const bookToUpdate: BookData = {
+                id: editingBook.id,
+                title: bookFormData.title,
+                author: bookFormData.author,
+                note: bookFormData.note,
+                name: bookFormData.name,
+                description: bookFormData.description,
+                spineColor: bookFormData.spineColor,
+                genres: allGenres.filter(genre => bookFormData.genreIds.includes(genre.id))
+            };
+            updateBook(bookToUpdate);
         }
     };
-
     return (
         <>
             <div className="text-center pr-10 pl-10 pt-10">
