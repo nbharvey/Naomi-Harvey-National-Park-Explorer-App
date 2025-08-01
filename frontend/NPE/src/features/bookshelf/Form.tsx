@@ -6,7 +6,7 @@ import type { Genre } from '../../types';
 import type { NewBookData } from '../../types';
 import type { FormProps } from '../../types';
 
-const createDefaultBook = (): BookData => ({
+const createDefaultBook = () => ({
     title: '',
     author: '',
     note: '',
@@ -15,13 +15,12 @@ const createDefaultBook = (): BookData => ({
     spineColor: ''
 });
 
-// const AVAILABLE_GENRES = ["Adventure Fiction", "Mystery/Thriller", "Historical Fiction", "Romance", "Young Adult", "Autobiography", "Memoir", "Travel", "Exploration", "Natural History", "Survival", "History", "Biography"];
+const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
+    const [formData, setFormData] = useState(createDefaultBook());
+    const [allGenres, setAllGenres] = useState<Genre[]>([]);
+    const [selectedGenreIds, selectedGenreIds] = useState<number[]>([]);
 
-
-const Form: React.FC<FormProps> = ({ book = createDefaultBook(), onFormSubmit }) => {
-    const [formData, setFormData] = useState<BookData>(() => {
-        return book || createDefaultBook();
-    });
+    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
