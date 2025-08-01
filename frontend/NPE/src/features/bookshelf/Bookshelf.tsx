@@ -1,7 +1,7 @@
 import Shelf from "./Shelf";
 import Form from "./Form";
 import { BasicMenu }  from "../../components/BasicMenu";
-import React from "react";
+import React, { useEffect } from "react";
 import useBooks from "./useBooks";
 import '../../index.css';
 import type { BookData } from "../../types";
@@ -13,7 +13,23 @@ const Bookshelf: React.FC = () => {
     //state for filtering books by genre name
     const [filteredGenre, setFilteredGenre] = useState<string[]>([]);
 
-    const handleGenreFilter = (genre: string) => {
+    //state for all possible genres fetched from API
+    const [allGenres, setAllGenres] = useState<Genre[]>([]);
+
+    //fetch all genres from API to populate filter menu
+    useEffect(() => {
+        const fetchGenres = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/genres');
+                setAllGenres(response.data);
+            } catch (error) {
+                console.error('Error fetching genres:', error);
+            }
+        };
+        fetchGenres();
+    }, []);
+
+    const handleGenreFilter = (genreName: string) => {
         setFilteredGenre(prev =>
             prev.includes(genre)
                 ? prev.filter(g => g !== genre)
