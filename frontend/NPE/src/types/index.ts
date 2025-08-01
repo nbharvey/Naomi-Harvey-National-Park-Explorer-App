@@ -10,6 +10,13 @@ export interface FormProps {
   onFormSubmit: (bookData: NewBookData) => void;
 }
 
+//ShelfProps for Shelf component
+export interface ShelfProps {
+    books: BookData[];
+    updateBook: (book: BookData) => void;
+    deleteBook: (book: BookData) => void;
+}
+
 //represents a complete Book object as exists in the db
 export interface BookData {
     id: number;

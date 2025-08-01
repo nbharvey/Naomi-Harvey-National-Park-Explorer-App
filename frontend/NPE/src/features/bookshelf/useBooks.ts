@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import axios from 'axios';
-import type { BookData } from '../../types';
+import type { BookData, NewBookData } from '../../types';
 
 /**
  * Creates nested arrays of books to represent shelves
@@ -62,13 +62,13 @@ function useBooks() {
     };
 
     // updates book by making a PUT request
-    const updateBook = async (updatedBookData: BookData): Promise<void> => {
+    const updateBook = async (id: number, bookData: NewBookData): Promise<void> => {
         try {
-            const response = await axios.put(`${API_URL}/${updatedBookData.id}`, updatedBookData);
+            const response = await axios.put(`${API_URL}/${id}`, bookData);
             //find book in local state and replace with updated book
             setCurrentBooks((prevBooks) =>
                 prevBooks.map((book) =>
-                    book.id === updatedBookData.id ? response.data : book
+                    book.id === id ? response.data : book
                 )
             );
         } catch (error) {

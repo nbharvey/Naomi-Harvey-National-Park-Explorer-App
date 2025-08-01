@@ -1,13 +1,13 @@
 import Shelf from "./Shelf";
 import Form from "./Form";
 import { BasicMenu }  from "../../components/BasicMenu";
-import React, { useEffect } from "react";
 import useBooks from "./useBooks";
 import '../../index.css';
 import type { BookData } from "../../types";
 import type { NewBookData } from "../../types";
-import { useMemo, useState } from "react";
-import { generatePath } from "react-router-dom";
+import type {Genre} from "../../types";
+import axios from "axios";
+import { useMemo, useState, useEffect } from "react";
 
 const Bookshelf: React.FC = () => {
     const { shelves, currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
@@ -34,7 +34,7 @@ const Bookshelf: React.FC = () => {
     const handleGenreFilter = (genreName: string) => {
         setFilteredGenres(prev =>
             prev.includes(genreName)
-                ? prev.filter(g => g !== genre)
+                ? prev.filter(genre => genre !== genre)
                 : [...prev, genreName]
         );
     };
@@ -98,16 +98,15 @@ const Bookshelf: React.FC = () => {
                         ))}
                     </div>
 
-            {/* ****************TODO ADJUST PROPS FOR ADD AND UPDATING BOOK */}
                 <div className="pl-12 pr-10 pb-10">
                     {editingBook ? (
                         <Form
-                            key={editingBook?.id || 'new-book-form'
-                            }
-                            onFormSubmit={addBook}
-                            book={editingBook} />
+                        key={editingBook?.id}
+                        book={editingBook}
+                        onFormSubmit={handleUpdateBook}
+                        />
                     ) : (
-                        <Form onFormSubmit={updateBook} />
+                        <Form onFormSubmit={addBook} />
                     )}
                 </div>
         </>

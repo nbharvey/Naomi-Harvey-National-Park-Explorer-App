@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import type { BookData } from '../../types';
 import Book from './Book';
+import type { ShelfProps } from '../../types';
 
-interface ShelfProps {
-    books: BookData[];
-    updateBook: (book: BookData) => void;
-    deleteBook: (book: BookData) => void;
-}
 
 const Shelf: React.FC<ShelfProps> = ({ books, updateBook, deleteBook }) => {
     // state for the currently open modal is typed to be either a BookData object or null
