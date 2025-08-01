@@ -44,7 +44,7 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                 description: book.description || '',
                 spineColor: book.spineColor || '',
             });
-            setSelectedGenreIds(book.genres?.map(genre => genre.id) || []);
+            setSelectedGenreIds(book.genre?.map(genre => genre.id) || []);
         } else {
             //reset form
             setFormData(createDefaultBook());

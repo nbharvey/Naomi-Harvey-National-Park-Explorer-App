@@ -15,7 +15,7 @@ export interface BookData {
     id: number;
     title: string;
     author: string;
-    genreIds: number[];
+    genre: Genre[];
     description: string;
     spineColor: string;
     name?: string;
