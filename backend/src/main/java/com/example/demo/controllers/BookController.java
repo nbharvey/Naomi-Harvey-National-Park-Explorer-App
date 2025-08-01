@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.dto.BookDTO;
 import com.example.demo.models.Book;
 import com.example.demo.services.BookService;
 import org.springframework.http.HttpStatus;
@@ -36,30 +37,30 @@ public class BookController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Book createBook(@RequestBody Map<String, Object> payload) {
+    public Book createBook(@RequestBody BookDTO bookRequest) {
         Book book = new Book();
-        book.setTitle((String) payload.get("title"));
-        book.setAuthor((String) payload.get("author"));
-        // Extract other book fields as needed...
+        //get all data from DTO
+        book.setTitle(bookRequest.getTitle());
+        book.setAuthor(bookRequest.getAuthor());
+        book.setName(bookRequest.getName());
+        book.setNote(bookRequest.getNote());
+        book.setDescription(bookRequest.getDescription());
+        book.setSpineColor(bookRequest.getSpineColor());
 
-        List<Integer> genreIdsAsInt = (List<Integer>) payload.get("genreIds");
-        List<Long> genreIds = genreIdsAsInt.stream().map(Long::valueOf).collect(Collectors.toList());
-
-        return bookService.createBook(book, genreIds);
+        return bookService.createBook(book, bookRequest.getGenreIds());
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Map<String, Object> payload) {
+    public ResponseEntity<Book> updateBook(@PathVariable Long id, BookDTO bookRequest) {
         Book bookDetails = new Book();
-        bookDetails.setTitle((String) payload.get("title"));
-        bookDetails.setAuthor((String) payload.get("author"));
-        // Extract other book fields...
+        bookDetails.setTitle(bookRequest.getTitle());
+        bookDetails.setAuthor(bookRequest.getAuthor());
+        bookDetails.setName(bookRequest.getName());
+        bookDetails.setNote(bookRequest.getNote());
+        bookDetails.setDescription(bookRequest.getDescription());
+        bookDetails.setSpineColor(bookRequest.getSpineColor());
 
-        List<Integer> genreIdsAsInt = (List<Integer>) payload.get("genreIds");
-        List<Long> genreIds = genreIdsAsInt != null ?
-                genreIdsAsInt.stream().map(Long::valueOf).collect(Collectors.toList()) : null;
-
-        return bookService.updateBook(id, bookDetails, genreIds)
+        return bookService.updateBook(id, bookDetails, bookRequest.getGenreIds())
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
