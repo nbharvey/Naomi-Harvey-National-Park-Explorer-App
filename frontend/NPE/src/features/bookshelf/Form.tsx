@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { CustomButton } from '../../components/CustomButton';
 import type { BookData } from '../../types';
 import '../../index.css'; 
+import type { Genre } from '../../types';
 
 
 //type for genre object being fetched from API
-interface Genre {
-    id: number;
-    name: string;
-}
+
 
 interface FormProps {
     book?: BookData; 
@@ -16,13 +14,10 @@ interface FormProps {
 }
 
 const createDefaultBook = (): BookData => ({
-    id: Date.now().toString(),
     title: '',
     author: '',
     note: '',
     name: '',
-    isEditing: false,
-    genres: [],
     description: '',
     spineColor: ''
 });
