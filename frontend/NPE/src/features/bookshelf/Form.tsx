@@ -5,7 +5,6 @@ import '../../index.css';
 import type { Genre } from '../../types';
 
 
-//type for genre object being fetched from API
 
 
 interface FormProps {
