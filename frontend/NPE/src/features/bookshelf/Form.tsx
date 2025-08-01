@@ -19,7 +19,7 @@ const createDefaultBook = () => ({
 const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
     const [formData, setFormData] = useState(createDefaultBook());
     const [allGenres, setAllGenres] = useState<Genre[]>([]);
-    const [selectedGenreIds, selectedGenreIds] = useState<number[]>([]);
+    const [selectedGenreIds, setSelectedGenreIds] = useState<number[]>([]);
 
     //fetch all available genres from backend when component loads
     useEffect(() => {
@@ -34,6 +34,22 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
         fetchGenres();
     }, []);
     
+    //pre-populate the form when editing
+    useEffect(() => {
+        if (book) {
+            setFormData({
+                title: book.title || '',
+                author: book.author || '',
+                note: book.note || '',
+                name: book.name || '',
+                description: book.description || '',
+                spineColor: book.spineColor || '',
+            });
+        } else {
+            setSelectedGenreIds(book.genres?.map(genre => genre.id) || []);
+        }
+    }, [book]);
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
