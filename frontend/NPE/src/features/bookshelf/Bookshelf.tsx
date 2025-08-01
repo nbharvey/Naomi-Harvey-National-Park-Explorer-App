@@ -70,7 +70,7 @@ const Bookshelf: React.FC = () => {
                         ))}
                     </div>
 
-            /*****************TODO: ADJUST PROPS FOR ADD AND UPDATING BOOK */
+            {/* ****************TODO ADJUST PROPS FOR ADD AND UPDATING BOOK */}
                 <div className="pl-12 pr-10 pb-10">
                     {editingBook ? (
                         <Form

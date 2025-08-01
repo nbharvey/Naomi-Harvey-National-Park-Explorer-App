@@ -3,10 +3,18 @@ import { CustomButton } from '../../components/CustomButton';
 import type { BookData } from '../../types';
 import '../../index.css'; 
 
+
+//type for genre object being fetched from API
+interface Genre {
+    id: number;
+    name: string;
+}
+
 interface FormProps {
     book?: BookData; 
     onFormSubmit: (bookData: BookData) => void;
 }
+
 const createDefaultBook = (): BookData => ({
     id: Date.now().toString(),
     title: '',
@@ -19,7 +27,7 @@ const createDefaultBook = (): BookData => ({
     spineColor: ''
 });
 
-const AVAILABLE_GENRES = ["Adventure Fiction", "Mystery/Thriller", "Historical Fiction", "Romance", "Young Adult", "Autobiography", "Memoir", "Travel", "Exploration", "Natural History", "Survival", "History", "Biography"];
+// const AVAILABLE_GENRES = ["Adventure Fiction", "Mystery/Thriller", "Historical Fiction", "Romance", "Young Adult", "Autobiography", "Memoir", "Travel", "Exploration", "Natural History", "Survival", "History", "Biography"];
 
 
 const Form: React.FC<FormProps> = ({ book = createDefaultBook(), onFormSubmit }) => {
