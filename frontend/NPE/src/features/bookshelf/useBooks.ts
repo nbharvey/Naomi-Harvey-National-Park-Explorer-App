@@ -36,7 +36,6 @@ function useBooks() {
                 console.error("Failed to fetch books from API", error);
             }
         };
-
         fetchBooks();
     }, []);
 
@@ -122,6 +121,17 @@ function useBooks() {
     // };
     /**************************END OLD LOGIC************************ */
 
+    //set book's isEditing to true
+    const setEditingState = (bookToEdit: BookData) => {
+        setCurrentBooks((prevBooks) =>
+            prevBooks.map((book) =>
+                book.id === bookToEdit.id 
+                    ? { ...book, isEditing: true }
+                    : { ...book, isEditing: true }
+            )
+        );
+    
+    }
 
 
     // useMemo to find the book currently being edited.
@@ -162,6 +172,7 @@ function useBooks() {
         shelves,
         addBook,
         updateBook,
+        setEditingState,
         editingBook,
         deleteBook,
     };

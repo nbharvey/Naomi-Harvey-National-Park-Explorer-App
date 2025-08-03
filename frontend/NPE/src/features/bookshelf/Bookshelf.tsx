@@ -1,6 +1,5 @@
 import Shelf from "./Shelf";
 import Form from "./Form";
-import { BasicMenu }  from "../../components/BasicMenu";
 import useBooks from "./useBooks";
 import '../../index.css';
 import type { BookData } from "../../types";
@@ -17,6 +16,8 @@ const Bookshelf: React.FC = () => {
 
     //state for all possible genres fetched from API
     const [allGenres, setAllGenres] = useState<Genre[]>([]);
+
+    const { ... setEditingState } = useBooks();
 
     //fetch all genres from API to populate filter menu
     useEffect(() => {
@@ -51,6 +52,11 @@ const Bookshelf: React.FC = () => {
         );
     }, [currentBooks, filteredGenres]);
 
+    //logic to handle show all button
+    const showAllGenres = () => {
+        setFilteredGenres([]);
+    };
+
     //useMemo recalculates shelves to display by genre
     const displayedShelves = useMemo(() => {
         const shelves: BookData[][] = [];
@@ -84,13 +90,21 @@ const Bookshelf: React.FC = () => {
 
             </div>
             
-                <div className="flex flex-wrap justify-center gap-8 p-8">
-                    <BasicMenu
-                        label="Sort Books By Genre"
-                        options={allGenres.map(genre => genre.name)}
-                        onSelect={(handleGenreFilter)
-                        }
-                    />
+                <div className="flex flex-wrap justify-center gap-1 p-1 text-xs">
+                <button onClick={showAllGenres} className={filteredGenres.length === 0 ? 'filter-button-active' : 'filter-button' + "bg-almond border-2 border-kobicha"}
+                >
+                    Show All Genres
+                </button>
+                {allGenres.map((genre) => (
+                    <button
+                        key={genre.id}
+                        onClick={() => handleGenreFilter(genre.name)}
+                        className={filteredGenres.includes(genre.name) ? 'filter-button-active' : '' + "bg-almond border-2 border-kobicha p-1"}
+                    >
+                        {genre.name}
+                    </button>
+                ))}
+
                 </div>
         
                     <div className="p-10 b-black">
@@ -100,7 +114,8 @@ const Bookshelf: React.FC = () => {
                                 className="border-4 bg-almond h-30 border-kobicha flex justify-start items-end"
                             >
                                 <Shelf 
-                                    books={shelfBooks} 
+                                    books={shelfBooks}
+                                    setEditingState={setEditingState}
                                     updateBook={updateBook} 
                                     deleteBook={deleteBook} 
                                 />

@@ -133,7 +133,7 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                     className='border-b-4 border-kobicha p-2'
                     >
                     <label>What is the genre(s) for the book?<br /></label>
-                    <div className="flex flex-wrap gap-4 mt-2">
+                    <div className="flex flex-wrap mt-2  p-1 gap-1 text-s">
                         {allGenres.map((genre) => (
                             <div key={genre.id}>
                                 <input
@@ -178,6 +178,8 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                         value={formData.name || ''} // Handle potential undefined value
                         onChange={handleChange}
                         required
+                        className="bg-almond text-kobicha h-full w-full"
+
                     />
                 </div>
 

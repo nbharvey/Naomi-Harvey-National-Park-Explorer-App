@@ -1,20 +1,12 @@
 import { CustomButton } from "../../components/CustomButton";
 import UserData from "./UserData";
 import React from 'react';
-import type { BookData } from '../../types';
+import type {BookProps} from '../../types';
 
-interface BookProps {
-    book: BookData;
-    isOpen: boolean;
-    toggleModal: (book: BookData | null) => void;
-    updateBook: (book: BookData) => void;
-    deleteBook: (book: BookData) => void;
-}
-
-const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, updateBook, deleteBook }) => {
+const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState, updateBook, deleteBook }) => {
 
     const handleEdit = () => {
-        updateBook({ ...book, isEditing: true });
+        setEditingState(book);
         toggleModal(null);
     };
 
@@ -38,11 +30,11 @@ const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, updateBook, dele
             <div
                 onClick={() => toggleModal(book)}
                 style={{ backgroundColor: book.spineColor }}
-                className="h-40 w-10 overflow-hidden"
-            >
-                <p className="p-2 text-sm writing-vertical-rl">{book.title}</p>
-            </div>
-
+                className="hover:-rotate-6 hover:scale-90 h-50"
+                >
+                  
+                <p className="p-2 text-xs writing-vertical-rl overflow-wrap">{book.title}</p>
+                </div>
             {isOpen && (
                 <div onClick={handleOverlayClick}>
                     <div className="bg-almond border-4 border-kobicha items-center text-center fixed inset-20"

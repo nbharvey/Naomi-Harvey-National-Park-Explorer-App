@@ -12,9 +12,21 @@ export interface FormProps {
 
 //ShelfProps for Shelf component
 export interface ShelfProps {
-    books: BookData[];
+  books: BookData[];
+    setEditingState: (book: BookData) => void;
     updateBook: (book: BookData) => void;
     deleteBook: (book: BookData) => void;
+    
+}
+
+//BookProps for Book component
+export interface BookProps {
+    book: BookData;
+    isOpen: boolean;
+    toggleModal: (book: BookData | null) => void;
+    updateBook: (book: BookData) => void;
+    deleteBook: (book: BookData) => void;
+    setEditingState: (book: BookData) => void;
 }
 
 //represents a complete Book object as exists in the db
