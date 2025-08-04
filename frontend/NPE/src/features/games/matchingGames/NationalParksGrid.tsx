@@ -106,7 +106,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 
       <BasicMenu
         label="Choose Game Type"
-        options={["Match by State", "Match by Picture", "Match by Popular Attraction"]}
+        options={["Match by State", "Match by Popular Attraction"]}
         onSelect={(opt) => {
           setSelectedGame(opt as string);
           console.log("Game type:", opt);
@@ -115,7 +115,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 
       <BasicMenu
         label="Number of Cards"
-        options={[2, 12, 24, 36]}
+        options={[12, 24, 36]}
         onSelect={(opt) => {
           setCardCount(Number(opt));
           console.log("Card count:", opt);

@@ -14,12 +14,12 @@ interface GameInfo {
       description: "A flashcard matching game. It is cool.",
       path: '/games/parks-matching-game',
       },
-      {
-        id: 'parks-memory-game',
-        title: "National Parks Memory",
-        description: "A memory game. It is cool.",
-        path: '/games/parks-memory-game',
-      },
+      // {
+      //   id: 'parks-memory-game',
+      //   title: "National Parks Memory",
+      //   description: "A memory game. It is cool.",
+      //   path: '/games/parks-memory-game',
+      // },
   ];
 
 function Games() {

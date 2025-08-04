@@ -19,12 +19,12 @@ export function NavbarDefault() {
   }, []);
 
   const navLinks = [
-    { name: "My Parks", path: "/myparks" },
-    { name: "Explore Parks", path: "/explore"},
-    { name: "Games", path: "/games" },
+    // { name: "My Parks", path: "/myparks" },
+    // { name: "Explore Parks", path: "/explore"},
+    { name: "Games", path: "/games/parks-matching-game" },
     { name: "Library", path: "/bookshelf" },
     { name: "Maps", path: "/maps" },
-    { name: "Blog", path: "/blog" },
+    // { name: "Blog", path: "/blog" },
 
   ];
  
@@ -36,7 +36,7 @@ export function NavbarDefault() {
           as="li"
           variant="small"
           color="blue-gray"
-          className="p-1 font-medium font-NaomiFont2"
+          className="p-1 font-medium"
         >
           <Link to={path} className="flex items-center">
             {name}
@@ -52,7 +52,7 @@ export function NavbarDefault() {
         <Typography
           as={Link}
           to="/"
-          className="mr-4 cursor-pointer py-1.5 font-NaomiFont2 font-bold"
+          className="mr-4 cursor-pointer py-1.5 font-bold"
         >
           National Parks Explorer
         </Typography>
