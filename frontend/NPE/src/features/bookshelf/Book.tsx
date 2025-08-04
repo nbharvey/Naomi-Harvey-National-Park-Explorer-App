@@ -25,15 +25,24 @@ const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState,
         e.stopPropagation();
     };
 
+    const displayTitle = book.title.split(/[:–-]/)[0].trim();
+
+
     return (
         <div>
             <div
                 onClick={() => toggleModal(book)}
-                style={{ backgroundColor: book.spineColor }}
-                className="hover:-rotate-6 hover:scale-90 h-50"
+                style={{
+                    backgroundColor: book.spineColor,
+                    borderLeftColor: 'rgba(0, 0, 0, 0.2)',
+                    borderBottomColor: 'rgba(0, 0, 0, 0.2)'
+                }}
+                className="border-l-2 border-b-2 mr-0.5 overflow-hidden w-10 max-w-15 flex items-center justify-center hover:-rotate-6 hover:scale-90 max-h-36 rounded-tr"
                 >
                   
-                <p className="p-2 text-xs writing-vertical-rl overflow-wrap">{book.title}</p>
+                  <p className="p-2 text-center text-xs writing-vertical-rl break-words">
+                    {displayTitle}
+                </p>
                 </div>
             {isOpen && (
                 <div onClick={handleOverlayClick}>

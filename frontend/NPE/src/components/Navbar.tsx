@@ -110,14 +110,15 @@ export function NavbarDefault() {
       <Collapse open={openNav}>
         <div className="container mx-auto">
           {navList}
-          <div className="flex items-center gap-x-1">
+          {/*TODO: implement sign-in and create-account button functionality*/}
+          {/* <div className="flex items-center gap-x-1">
             <CustomButton fullWidth variant="text" size="sm" className="">
-              <span>Log In</span>
+              <span>Create Account</span>
             </CustomButton>
             <CustomButton fullWidth variant="gradient" size="sm" className="">
               <span>Sign in</span>
             </CustomButton>
-          </div>
+          </div> */}
         </div>
       </Collapse>
     </Navbar>

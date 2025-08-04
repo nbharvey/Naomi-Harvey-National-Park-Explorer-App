@@ -58,8 +58,8 @@ const Bookshelf: React.FC = () => {
     //useMemo recalculates shelves to display by genre
     const displayedShelves = useMemo(() => {
         const shelves: BookData[][] = [];
-        for (let i = 0; i < displayedBooks.length; i += 8) {
-            shelves.push(displayedBooks.slice(i, i + 8));
+        for (let i = 0; i < displayedBooks.length; i += 6) {
+            shelves.push(displayedBooks.slice(i, i + 6));
         }
         return shelves;
     }, [displayedBooks]);
