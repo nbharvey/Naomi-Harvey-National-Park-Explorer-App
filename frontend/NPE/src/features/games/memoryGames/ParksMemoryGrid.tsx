@@ -1,32 +1,34 @@
-import useParksData from "./useParksData";
+//TODO: finish logic for memory game
 
-function ParksMemoryGrid() {
-    const { parksData, loading, error} = useParksData();
+// import useParksData from "./useParksData";
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error!</div>;
+// function ParksMemoryGrid() {
+//     const { parksData, loading, error} = useParksData();
 
-    return (
-        <div>
-            <h1>Parks</h1>
-            <div>
-                {parksData.map((park) => (
-                    <div
-                        key={park.id}
-                        style={{
-                            border: '1px solid gray',
-                            margin: '5px',
-                            padding: '10px',
-                            width: '200px',
-                          }}
-                    >
-                        <p>{park.fullName}</p>
-                        <p>{park.states}</p>
-                    </div>
-                        ))}
-</div>
-        </div>
-    )
-};
+//     if (loading) return <div>Loading...</div>;
+//     if (error) return <div>Error!</div>;
 
-export default ParksMemoryGrid;
+//     return (
+//         <div>
+//             <h1>Parks</h1>
+//             <div>
+//                 {parksData.map((park) => (
+//                     <div
+//                         key={park.id}
+//                         style={{
+//                             border: '1px solid gray',
+//                             margin: '5px',
+//                             padding: '10px',
+//                             width: '200px',
+//                           }}
+//                     >
+//                         <p>{park.fullName}</p>
+//                         <p>{park.states}</p>
+//                     </div>
+//                         ))}
+// </div>
+//         </div>
+//     )
+// };
+
+// export default ParksMemoryGrid;
