@@ -47,8 +47,8 @@ export function NavbarDefault() {
   );
  
   return (
-    <Navbar fullWidth className="sticky top-0 z-50 rounded-none border-b bg-teal-900 border-teal-900 px-4 py-2 lg:px-8 lg:py-2">
-      <div className="flex items-center justify-between text-white ">
+    <Navbar fullWidth className="sticky top-0 z-50 rounded-none border-b bg-whitepx-4 py-2 lg:px-8 lg:py-2">
+      <div className="flex items-center justify-between text-black ">
         <Typography
           as={Link}
           to="/"
@@ -57,7 +57,7 @@ export function NavbarDefault() {
           National Parks Explorer
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        <div className="flex items-center gap-x-1">
+        {/* <div className="flex items-center gap-x-1">
           <CustomButton variant="text" size="sm" className="hidden lg:inline-block">
             <span>Log In</span>
           </CustomButton>
@@ -68,7 +68,7 @@ export function NavbarDefault() {
           >
             <span>Sign in</span>
           </CustomButton>
-        </div>
+        </div> */}
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"

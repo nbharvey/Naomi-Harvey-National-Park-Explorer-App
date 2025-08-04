@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Bookshelf from './features/bookshelf/Bookshelf.tsx';
-import Games from './features/games/Games.tsx';
 import { NavbarDefault } from './components/Navbar.tsx';
 import { FooterWithSitemap } from './components/Footer.tsx';
 import PageNotFound from './components/404Page.tsx';
