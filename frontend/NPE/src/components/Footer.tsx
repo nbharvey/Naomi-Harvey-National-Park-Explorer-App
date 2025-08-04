@@ -5,18 +5,19 @@ const SITEMAP = [
     title: "National Parks Explorer",
     links: ["About This Site", "GitHub Source Code", "Our Team", "Other Projects"],
   },
-  {
-    title: "Help Center",
-    links: ["Ranger Bot", "GitHub", "Contact Us"],
-  },
-  {
-    title: "Resources",
-    links: ["Blog", "More About National Parks", "For Teachers"],
-  },
-  {
-    title: "Products",
-    links: ["Shirts", "Stickers", "For Teachers"],
-  },
+  //TODO: implement extra links
+  // {
+  //   title: "Help Center",
+  //   links: ["Ranger Bot", "GitHub", "Contact Us"],
+  // },
+  // {
+  //   title: "Resources",
+  //   links: ["Blog", "More About National Parks", "For Teachers"],
+  // },
+  // {
+  //   title: "Products",
+  //   links: ["Shirts", "Stickers", "For Teachers"],
+  // },
 ];
  
 const currentYear = new Date().getFullYear();

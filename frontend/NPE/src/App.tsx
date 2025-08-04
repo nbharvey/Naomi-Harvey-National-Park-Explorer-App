@@ -13,6 +13,9 @@ import ParksMemoryGrid from './features/games/memoryGames/ParksMemoryGrid.tsx';
 import MyParks from './features/MyParks.tsx';
 import ExploreParks from './features/ExploreParks.tsx';
 import MapsHome from './features/maps/MapsHome.tsx';
+import BlogHomePage from './features/blog/BlogHomePage.tsx';
+import BlogPostPage from './features/blog/BlogPostPage.tsx';
+
 
 function App() {
 
@@ -31,6 +34,9 @@ function App() {
           <Route path="/myparks" element={<MyParks />} />
           <Route path="/explore" element={<ExploreParks />} />
           <Route path="/maps" element={<MapsHome />} />
+          <Route path="/blog" element={<BlogHomePage />} />
+          <Route path="/blog/:postId" element={<BlogPostPage />} />
+
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>

@@ -1,13 +1,15 @@
-import { BlogPost } from "./types";
+//TODO: Implement Blog
 
-export const blogPosts: BlogPost[] = [
-    {
-        id: 'epic-western-road-trip-part-1',
-        title: 'Epic Western Road Trip Part 1',
-        imageURL: '',
-        excerpt: '',
-        content: '',
-        author: 'Naomi Harvey',
-        date: 'July 01, 2022',
-    },
-];
+// import type { BlogPost } from "./types";
+
+// export const blogPosts: BlogPost[] = [
+//     {
+//         id: 'epic-western-road-trip-part-1',
+//         title: 'Epic Western Road Trip Part 1',
+//         imageUrl: './images/blog/deva.jpg',
+//         excerpt: 'As I made coffee on the rim of the Grand Canyon while the wind moved through the pines, for a moment, everything felt completely still.',
+//         content: "In May of 2022, I packed up my 2011 Chevy Impala with the essentials: backpacking gear, a Jetboil stove, a cooler with simple food, and my blue heeler, Theo, who was 8 years old at the time. My brother came with me, and together we set off from Lincoln, Nebraska, aiming to spend three weeks traveling through the western U.S., visiting as many National Parks as we could reach. We planned to camp only at dispersed (free) sites, relying on our own supplies, shared focus, and the rhythms of the road.<br /><strong>Day 1: St. Mary’s Glacier in a Snowstorm</strong><br />Our first destination was Colorado. We reached St. Mary’s Glacier and set up camp at a dispersed spot nearby — just in time for a snowstorm. We pitched our tent in the cold, the ground already coated in snow, and fell asleep with the wind pressing against the sides. It was a rough start, but it made the journey feel real from the beginning.<br /><strong>Through Colorado into Utah: Canyonlands to Bryce</strong><br />We crossed Colorado and entered Utah, where the red desert opened wide. Canyonlands was our first park in the state — massive, quiet, and unlike anywhere else I’d been. From there we drove the length of Utah to see Zion and Bryce Canyon in the same day. The landscapes were staggering: towering cliffs, layered rock formations, and canyons opening out beneath soft afternoon light. We camped at dispersed sites every night, each one surrounded by silence and space.<br /><strong>Grand Canyon North Rim</strong><br />The North Rim of the Grand Canyon felt more forested and remote than I expected. It was quiet there, cooler, and less developed than the South Rim. We spent the day in the park and hiked the only dog-friendly trail — about four miles — so Theo could walk with us. I made coffee with my Jetboil on the canyon rim while the wind moved through the pines. We used the park facilities to refill water and get rid of trash before continuing on.<br /><strong>Nevada and Death Valley</strong><br />From Arizona, we drove west, camping at a dispersed spot overlooking Las Vegas. The city lights felt distant. The next morning, we passed through Pahrump, Nevada and entered Death Valley. It was extremely hot, and we had gotten a late start. We took turns going into the visitor center to refill water and take a break from the heat. I stopped to run a short stretch on the road where the Badwater ultramarathon takes place — not far, just enough to feel the weight of the place. It took us the entire day to cross the park.<br /><strong>Into the Sierras</strong><br />Once we exited Death Valley, we had originally planned to camp near Mt. Whitney — a mountain I’ve dreamed of climbing — but the road was longer and steeper than we expected. Instead, we detoured south to bypass the Sierras, then found a dispersed spot deeper in the mountains and arrived after dark. We set up camp using the car headlights and went straight to sleep.<br />The next morning we decided to rest. We made breakfast, then walked up a national forest road to explore the area. It turned into an 8-mile hike, slow and steady, with a quiet lookout at the top. That afternoon we set up a slackline between two trees, read, and rested. In the evening, we walked out to the road again to watch the sun set over the mountains and planned the next part of our trip.",
+//         author: 'Naomi Harvey',
+//         date: 'July 01, 2022',
+//     },
+// ];

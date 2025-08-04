@@ -2,6 +2,7 @@ import { CustomButton } from "../../components/CustomButton";
 import UserData from "./UserData";
 import React from 'react';
 import type {BookProps} from '../../types';
+import { GalleryWithCarousel } from "../../components/GalleryWithCarousel";
 
 const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState, deleteBook }) => {
 
@@ -79,6 +80,7 @@ const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState,
                                 Return book
                             </CustomButton>
                         </div>
+                        <GalleryWithCarousel />
                     </div>
                 </div>
             )}
