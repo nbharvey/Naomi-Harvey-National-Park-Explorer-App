@@ -82,6 +82,7 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
             genreIds: selectedGenreIds,
          };
 
+        console.log("Form is calling onFormSubmit with:", bookToSubmit);
         onFormSubmit(bookToSubmit);
 
         //reset form data

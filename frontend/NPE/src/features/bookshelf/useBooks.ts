@@ -52,6 +52,7 @@ function useBooks() {
 
     //adds new book by making a POST request
     const addBook = async (bookData: NewBookData): Promise<void> => {
+        console.log("useBooks' addBook function was called")
         try {
             const response = await axios.post(API_URL, bookData);
             setCurrentBooks((prevBooks) => [...prevBooks, response.data]);
@@ -62,6 +63,7 @@ function useBooks() {
 
     // updates book by making a PUT request
     const updateBook = async (bookToUpdate: BookData): Promise<void> => {
+        console.log("useBooks' updateBook function was called");
         // create payload that the backend API expects
         const payload: NewBookData = {
             title: bookToUpdate.title,
@@ -127,7 +129,7 @@ function useBooks() {
             prevBooks.map((book) =>
                 book.id === bookToEdit.id 
                     ? { ...book, isEditing: true }
-                    : { ...book, isEditing: true }
+                    : { ...book, isEditing: false }
             )
         );
     

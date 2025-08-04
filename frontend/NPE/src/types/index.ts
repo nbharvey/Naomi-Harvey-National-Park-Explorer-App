@@ -14,7 +14,6 @@ export interface FormProps {
 export interface ShelfProps {
   books: BookData[];
     setEditingState: (book: BookData) => void;
-    updateBook: (book: BookData) => void;
     deleteBook: (book: BookData) => void;
     
 }
@@ -24,7 +23,6 @@ export interface BookProps {
     book: BookData;
     isOpen: boolean;
     toggleModal: (book: BookData | null) => void;
-    updateBook: (book: BookData) => void;
     deleteBook: (book: BookData) => void;
     setEditingState: (book: BookData) => void;
 }

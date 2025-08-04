@@ -3,7 +3,7 @@ import UserData from "./UserData";
 import React from 'react';
 import type {BookProps} from '../../types';
 
-const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState, updateBook, deleteBook }) => {
+const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState, deleteBook }) => {
 
     const handleEdit = () => {
         setEditingState(book);

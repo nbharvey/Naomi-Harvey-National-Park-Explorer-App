@@ -9,15 +9,13 @@ import axios from "axios";
 import { useMemo, useState, useEffect } from "react";
 
 const Bookshelf: React.FC = () => {
-    const { currentBooks, addBook, editingBook, deleteBook, updateBook } = useBooks();
+    const { currentBooks, addBook, setEditingState, editingBook, deleteBook, updateBook } = useBooks();
     
     //state for filtering books by genre name
     const [filteredGenres, setFilteredGenres] = useState<string[]>([]);//begin by showing all genres
 
     //state for all possible genres fetched from API
     const [allGenres, setAllGenres] = useState<Genre[]>([]);
-
-    const { ... setEditingState } = useBooks();
 
     //fetch all genres from API to populate filter menu
     useEffect(() => {
@@ -68,6 +66,7 @@ const Bookshelf: React.FC = () => {
 
     //handler for update mode of form
     const handleUpdateBook = (bookFormData: NewBookData) => {
+        console.log("Bookshelf's handleUpdateBook called");
         if (editingBook) {
             const bookToUpdate: BookData = {
                 id: editingBook.id,
@@ -106,24 +105,25 @@ const Bookshelf: React.FC = () => {
                 ))}
 
                 </div>
-        
-                    <div className="p-10 b-black">
+                
+                <div className="grid grid-cols-3 gap-8 p-10">
+                    
+                    <div className="col-span-2">
                         {/* map over filtered shelves to render */}
                         {displayedShelves.map((shelfBooks, index) => (
                             <div key={index}
-                                className="border-4 bg-almond h-30 border-kobicha flex justify-start items-end"
+                            className="border-4 bg-almond h-30 border-kobicha flex justify-start items-end"
                             >
                                 <Shelf 
                                     books={shelfBooks}
                                     setEditingState={setEditingState}
-                                    updateBook={updateBook} 
                                     deleteBook={deleteBook} 
                                 />
                             </div>
                         ))}
                     </div>
 
-                <div className="pl-12 pr-10 pb-10">
+                <div className="col-span-1">
                     {editingBook ? (
                         <Form
                         key={editingBook?.id}
@@ -134,6 +134,8 @@ const Bookshelf: React.FC = () => {
                         <Form onFormSubmit={addBook} />
                     )}
                 </div>
+            </div>
+            
         </>
     );
 }

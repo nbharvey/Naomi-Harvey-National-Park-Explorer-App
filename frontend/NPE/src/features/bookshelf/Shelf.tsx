@@ -4,7 +4,7 @@ import Book from './Book';
 import type { ShelfProps } from '../../types';
 
 
-const Shelf: React.FC<ShelfProps> = ({ books, setEditingState, updateBook, deleteBook }) => {
+const Shelf: React.FC<ShelfProps> = ({ books, setEditingState, deleteBook }) => {
     // state for the currently open modal is typed to be either a BookData object or null
     const [modal, setModal] = useState<BookData | null>(null);
 
@@ -36,7 +36,6 @@ const Shelf: React.FC<ShelfProps> = ({ books, setEditingState, updateBook, delet
                     toggleModal={toggleModal}
                     isOpen={modal?.id === book.id}
                     setEditingState={setEditingState}
-                    updateBook={updateBook}
                     deleteBook={deleteBook}
                 />
             ))}
