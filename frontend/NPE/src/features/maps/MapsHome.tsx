@@ -15,7 +15,7 @@ const MapsHome = () => {
                 }}
             >
                 <div className="text-center pr-10 pl-10 pt-10">
-                <h2 className="text-xl font-bold text-white">Maps of USA National Parks</h2>
+                <h2 className="text-xl font-heading text-white">Maps of USA National Parks</h2>
                 <p className="text-center text-white">Click on an arrowhead to view information about the 63 USA National Parks</p>
             </div>
                 <NationalParksMap />

@@ -93,7 +93,7 @@ const Bookshelf: React.FC = () => {
                 }}
             >
             <div className="text-center pr-10 pl-10 pt-10">
-                        <h2 className="text-xl font-bold">The Ultimate National Park Bookshelf</h2>
+                        <h2 className="text-xl font-heading">The Ultimate National Park Bookshelf</h2>
                         <p>Curate your collection by adding books that spark your sense of adventure.</p>
 
             </div>

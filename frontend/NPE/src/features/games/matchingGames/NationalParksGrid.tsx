@@ -82,7 +82,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
     }}>
     <DndProvider backend={HTML5Backend}>
     <div className="text-center pr-10 pl-10 pt-10">
-    <h2 className="text-xl font-bold">National Park Matching Game</h2>
+    <h2 className="text-xl font-heading">National Park Matching Game</h2>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8 p-4">
@@ -174,8 +174,8 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 </div>
 
                 ) : (
-                    <div className="text-center mt-8 text-black">
-                        <p>Please select "Match by State" and a number of cards to begin.</p>
+                    <div className="text-center mt-4 bg-mossGreen p-2 text-black">
+                        <p>Select a game type and a number of cards to begin.</p>
                     </div>
                 )}    
   

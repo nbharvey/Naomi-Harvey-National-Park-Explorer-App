@@ -53,11 +53,11 @@ const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState,
                         {/* If there is no book.name, display the book's details. */}
                         {!book.name && (
                             <ul>
-                                <li><h2>{book.title}</h2></li>
+                                <li><h2 className="font-heading p-2">{book.title}</h2></li>
                                 <br />
-                                <li><p>Author: {book.author}</p></li>
-                                <li><p>Genre: {book.genres.join(', ')}</p></li>
-                                <li><p>Summary: {book.description}</p></li>
+                                <li><p className="p-2">Author: {book.author}</p></li>
+                                <p className="p-2">Genre: {book.genres.map(genre => genre.name).join(', ')}</p>
+                                <li><p className="p-2">Summary: {book.description}</p></li>
                             </ul>
                         )}
 
@@ -80,7 +80,6 @@ const Book: React.FC<BookProps> = ({ book, isOpen, toggleModal, setEditingState,
                                 Return book
                             </CustomButton>
                         </div>
-                        <GalleryWithCarousel />
                     </div>
                 </div>
             )}

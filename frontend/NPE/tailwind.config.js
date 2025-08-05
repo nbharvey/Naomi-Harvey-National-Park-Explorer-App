@@ -11,7 +11,11 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
-      'NaomiFont2': ['Arial', 'Arial', 'sans-serif'],
+      fontFamily: {
+        sans: ['Indie Flower', 'sans-serif'],
+        heading: ['DynaPuff', 'sans-serif'],
+
+      },
     },
     colors: {
       ...COLOR_PALETTE,
