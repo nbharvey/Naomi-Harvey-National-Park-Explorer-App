@@ -41,6 +41,8 @@ This site is built with a modern tech stack to provide a fast, responsive, and m
   * Leaflet.js
 
   * React DnD
+    
+  * Material UI
 
 ## Future Features
 
