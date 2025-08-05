@@ -1,5 +1,5 @@
 import { GalleryWithCarousel } from "../components/GalleryWithCarousel";
-import HeroSection from "../components/HeroSection";
+// import HeroSection from "../components/HeroSection";
 
 const Home = () => {
   return (
@@ -58,7 +58,7 @@ const Home = () => {
           <div className="bg-white shadow rounded-lg p-4">
             <h3 className="font-bold text-lg mb-2">Did You Know?</h3>
             <p className="text-sm text-gray-700 mb-2">
-              The 63 National Parks in the USA cover a total of 52.4 million acres, that's roughly 2% of the land area of the United States!
+              The 63 National Parks in the USA cover a total of 52.4 million acres. That is roughly 2% of the land area of the United States!
             </p>
             <button className="w-full py-2 px-4 bg-green-600 text-white rounded hover:bg-green-700">
               Join Now

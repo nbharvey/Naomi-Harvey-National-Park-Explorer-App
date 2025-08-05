@@ -5,8 +5,8 @@ const MapsHome = () => {
 
     return (
         <>
-            <div className="w-full min-h-screen bg-white">
-                <h1 className='font-bold text-3xl text-center pt-10'>Maps of USA National Parks</h1>
+            <div className="w-full min-h-screen bg-green">
+                <h1 className='font-bold text-3xl text-center pt-4 pb-4 text-white'>Maps of USA National Parks</h1>
 
                 {/* <div className="w-full flex flex-wrap justify-center gap-8 p-4">
                 <BasicMenu label={"Designation"} options={['National Park', 'National Battlefield', 'National Monument']} />
