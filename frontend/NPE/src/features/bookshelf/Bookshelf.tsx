@@ -83,14 +83,23 @@ const Bookshelf: React.FC = () => {
     };
     return (
         <>
+            <div
+                style={{
+                    backgroundImage: "url('/images/blue_mountains.jpg')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                }}
+                // className="bg-mossGreen"
+            >
             <div className="text-center pr-10 pl-10 pt-10">
                         <h2 className="text-xl font-bold">The Ultimate National Park Bookshelf</h2>
                         <p>Curate your collection by adding books that spark your sense of adventure.</p>
 
             </div>
             
-                <div className="flex flex-wrap justify-center gap-1 p-1 text-xs">
-                <button onClick={showAllGenres} className={filteredGenres.length === 0 ? 'filter-button-active' : 'filter-button' + "bg-almond border-2 border-kobicha"}
+                <div className="flex flex-wrap justify-center text-center gap-1 p-1 text-xs">
+                <button onClick={showAllGenres} className={filteredGenres.length === 0 ? 'filter-button-active' : 'filter-button' + "bg-almond border-2 border-kobicha text-xs"}
                 >
                     Show All Genres
                 </button>
@@ -106,7 +115,7 @@ const Bookshelf: React.FC = () => {
 
                 </div>
                 
-                <div className="grid grid-cols-3 gap-8 p-10">
+                <div className="grid grid-cols-3 gap-4 p-4">
                     
                     <div className="col-span-2">
                         {/* map over filtered shelves to render */}
@@ -135,7 +144,7 @@ const Bookshelf: React.FC = () => {
                     )}
                 </div>
             </div>
-            
+        </div>
         </>
     );
 }

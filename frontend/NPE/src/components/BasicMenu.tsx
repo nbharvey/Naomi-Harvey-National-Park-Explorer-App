@@ -16,7 +16,7 @@ export function BasicMenu({ label, options, onSelect }: BasicMenuProps) {
   return (
     <Menu>
       <MenuHandler>
-        <Button className="font-NaomiFont2 font-bold bg-auburn">{label}</Button>
+        <Button className="bg-mossGreen">{label}</Button>
       </MenuHandler>
           <MenuList>
               {options.map((option) => (

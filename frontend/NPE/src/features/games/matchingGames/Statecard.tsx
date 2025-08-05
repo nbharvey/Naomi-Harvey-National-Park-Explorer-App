@@ -31,15 +31,15 @@ const Statecard: React.FC<StatecardProps> = ({ parkData, onMatch, isMatched }) =
     }));
     // Define CSS classes for styling.
     const baseClasses = "h-[100px] w-[150px] rounded-xl shadow-xl flex items-center justify-center p-2 border-2 border-dashed transition-all duration-200";
-    const idleClasses = "bg-blue-100 border-blue-400";
-    const hoverClasses = "bg-blue-300 ring-4 ring-blue-400";
-    const matchedClasses = "bg-gray-300 border-gray-400";
+    const idleClasses = "bg-green-100 border-green-400";
+    const hoverClasses = "bg-green-300 ring-4 ring-green-400";
+    const matchedClasses = "bg-green-300 border-green-400";
 
     // If this state has been matched, show a "Matched!" message.
     if (isMatched) {
         return (
             <div className={`${baseClasses} ${matchedClasses}`}>
-                <p className="font-bold text-gray-600">Matched!</p>
+                <p className="font-bold text-black">Matched!</p>
             </div>
         );
     }
@@ -47,7 +47,7 @@ const Statecard: React.FC<StatecardProps> = ({ parkData, onMatch, isMatched }) =
     // The `ref={drop}` from the useDrop hook makes this div a drop target.
     return (
         <div ref={drop} className={`${baseClasses} ${isOver ? hoverClasses : idleClasses}`}>
-            <h3 className="text-center text-l font-semibold text-blue-800">{parkData.state}</h3>
+            <h3 className="text-center text-l font-semibold text-green-800">{parkData.state}</h3>
         </div>
     );
 }

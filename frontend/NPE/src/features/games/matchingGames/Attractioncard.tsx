@@ -9,7 +9,7 @@ interface UsNationalPark {
     popularAttraction: string;
 }
 
-// Define the structure of the item being dropped from Parkcard.
+// define the structure of the item being dropped from Parkcard
 interface DroppedItem {
     id: number;
 }
@@ -22,31 +22,30 @@ interface AttractioncardProps {
 const AttractionCard: React.FC<AttractioncardProps> = ({ parkData, onMatch, isMatched }) => {
     const [{ isOver }, drop] = useDrop(() => ({
         accept: ITEM_TYPE,
-        // This function executes when a park is dropped on this state card
+        // function executes when a park is dropped on this state card
         drop: (item: DroppedItem) => onMatch(item.id, parkData.id),
         collect: (monitor) => ({
             isOver: monitor.isOver(),
         }),
     }));
     // Define CSS classes for styling.
-    const baseClasses = "h-[100px] w-[150px] rounded-xl shadow-xl flex items-center justify-center p-2 border-2 border-dashed transition-all duration-200";
-    const idleClasses = "bg-blue-100 border-blue-400";
-    const hoverClasses = "bg-blue-300 ring-4 ring-blue-400";
-    const matchedClasses = "bg-gray-300 border-gray-400";
+    const baseClasses = "h-[100px] w-[150px] rounded-xl shadow-xl flex items-center justify-center p-2 border-black border-2 border-dashed transition-all duration-200";
+    const idleClasses = "bg-green-100 border-green-400";
+    const hoverClasses = "bg-green-300 ring-4 ring-green-400";
+    const matchedClasses = "bg-black-300 border-black-400";
 
-    // If this state has been matched, show a "Matched!" message.
     if (isMatched) {
         return (
             <div className={`${baseClasses} ${matchedClasses}`}>
-                <p className="font-bold text-gray-600">Matched!</p>
+                <p className="font-bold text-black">Matched!</p>
             </div>
         );
     }
 
-    // The `ref={drop}` from the useDrop hook makes this div a drop target.
+    // `ref={drop}` from the useDrop hook makes this div a drop target.
     return (
         <div ref={drop} className={`${baseClasses} ${isOver ? hoverClasses : idleClasses}`}>
-            <h3 className="text-center text-l font-semibold text-blue-800">{parkData.popularAttraction}</h3>
+            <h3 className="text-center text-l font-semibold text-black">{parkData.popularAttraction}</h3>
         </div>
     );
 }

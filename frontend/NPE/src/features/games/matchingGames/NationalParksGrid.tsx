@@ -24,7 +24,6 @@ const initialParks = nationalParksData.map(a => ({ sort: Math.random(), value: a
 .map(a => a.value);
 
 function NationalParksGrid() {
-  // const [parks, setParks] = useState(initalParks);
   const [selectedGame, setSelectedGame] = useState("None");
   const [cardCount, setCardCount] = useState(0);
 
@@ -48,13 +47,12 @@ useEffect(() => {
     const numberOfPairs = cardCount / 2;
     const selected = initialParks.slice(0, numberOfPairs);
     
-    // gameParks and gameStates get their data ==
-    // They are populated with independently shuffled lists
+    // gameParks and gameStates get their data populated with independently shuffled lists
     setGameParks(shuffleArray(selected));
     setGameAttractions(shuffleArray(selected));
     setMatchedIds([]);
   } else {
-    // Clear the game board if the game mode is not active
+    // clear the game board if the game mode is not active
     setGameParks([]);
     setGameStates([]);
     setGameAttractions
@@ -64,7 +62,7 @@ useEffect(() => {
 const handleMatch = (parkId: number, stateId: number) => {
   if (parkId === stateId) {
       console.log(`Correct match: ID ${parkId}`);
-      // Add the ID to the list of matched pairs, preventing duplicates.
+      // add  ID to  list of matched pairs, preventing duplicates
       setMatchedIds(prev => prev.includes(parkId) ? prev : [...prev, parkId]);
   } else {
       console.log(`Incorrect match: Park ID ${parkId} dropped on State ID ${stateId}`);
@@ -73,36 +71,13 @@ const handleMatch = (parkId: number, stateId: number) => {
   
 const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 
-  // const moveCard = ((fromIndex: number, toIndex: number) => {
-  //   //T(any type can threre, it has to be an array)
-  //   function arraySwap<T>(arr: T[], i: number, j: number): T[] {
-  //     //create a copy of the orignal array
-  //     const copy = [...arr];
-  //     [copy[i], copy[j]] = [copy[j], copy[i]];
-  //     return copy;
-  //   }
-  //   setParks(prev => arraySwap(prev, fromIndex, toIndex));
-  // });
-
-  //TODO: logic for games and card counts, useEffect
-  //sets up game mode, and cleans up game mode
-//   useEffect(() => {
-//   if GameType
-// console.log();
-// }, [parks]);
-
-  //copies nationalParkData, will make a new shuffled version of national parks
-  // const slicedParks = useMemo(() => { 
-  //  return parks.slice(0, cardCount);
-  //   } , [cardCount, parks]);
-
   return (
     <DndProvider backend={HTML5Backend}>
     <div>
-        <h2 className='flex flex-wrap justify-center gap-8 pb-0 p-8 text-xl'>National Park Matching Game</h2>
+        <h2 className='flex flex-wrap justify-center gap-8 p-4 text-xl bg-mossGreen text-black'>National Park Matching Game</h2>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8 p-8">
+      <div className="flex flex-wrap justify-center gap-8 p-4">
 
       <BasicMenu
         label="Choose Game Type"
@@ -124,15 +99,15 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
       </div>
 
       {selectedGame === 'Match by State' && cardCount > 0 ? (
-                    <div className="flex flex-col lg:flex-row justify-around gap-8 mt-8">
+                    <div className="flex flex-col lg:flex-row justify-around gap-8">
                         {/* Parks Column - Renders from the `parksToDisplay` list */}
                         <div className="flex-1 p-4 bg-white/90 rounded-xl shadow-lg">
-                            <h3 className="text-xl font-bold text-center mb-4 text-gray-700">Parks</h3>
+                            <h3 className="text-xl font-bold text-center mb-4 text-black">Parks</h3>
                             <div className="flex flex-wrap justify-center gap-4 min-h-[120px]">
                                 {parksToDisplay.length > 0 ? parksToDisplay.map((park) => (
                                     <Parkcard key={park.id} park={park} />
                                 )) : (
-                                <p className="text-gray-500 self-center">All parks matched!
+                                <p className="text-black self-center">All parks matched!
                                   <CustomButton type="submit"> <p className='self-center text-black'>Play Again!</p>
                                   {/* {formData.isEditing ? 'Play Again!' : 'Take Me Home'} */}
                                   </CustomButton>
@@ -143,7 +118,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
           
                         {/* States Column - Renders from the `gameStates` list */}
                         <div className="flex-1 p-4 bg-white/90 rounded-xl shadow-lg">
-                            <h3 className="text-xl font-bold text-center mb-4 text-gray-700">States</h3>
+                            <h3 className="text-xl font-bold text-center mb-4 text-black">States</h3>
                             <div className="flex flex-wrap justify-center gap-4">
                                 {gameStates.map((parkData) => (
                                     <Statecard
@@ -160,12 +135,12 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
           <div className="flex flex-col lg:flex-row justify-around gap-8 mt-8">
               {/* Parks Column - Renders from the `parksToDisplay` list */}
               <div className="flex-1 p-4 bg-white/90 rounded-xl shadow-lg">
-                  <h3 className="text-xl font-bold text-center mb-4 text-gray-700">Parks</h3>
+                  <h3 className="text-xl font-bold text-center mb-4 text-black">Parks</h3>
                   <div className="flex flex-wrap justify-center gap-4 min-h-[120px]">
                       {parksToDisplay.length > 0 ? parksToDisplay.map((park) => (
                           <Parkcard key={park.id} park={park} />
                       )) : (
-                      <p className="text-gray-500 self-center">All parks matched!
+                      <p className="text-black self-center">All parks matched!
                         <CustomButton type="submit"> <p className='self-center text-black'>Play Again!</p>
                         {/* {formData.isEditing ? 'Play Again!' : 'Take Me Home'} */}
                         </CustomButton>
@@ -176,7 +151,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
       
               {/* Attractions Column - Renders from the `gameAttractions` list */}
               <div className="flex-1 p-4 bg-white/90 rounded-xl shadow-lg">
-                  <h3 className="text-xl font-bold text-center mb-4 text-gray-700">Popular Attractions</h3>
+                  <h3 className="text-xl font-bold text-center mb-4 text-black">Popular Attractions</h3>
                   <div className="flex flex-wrap justify-center gap-4">
                       {gameAttractions.map((parkData) => (
                           <AttractionCard
@@ -191,7 +166,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 </div>
 
                 ) : (
-                    <div className="text-center mt-8 text-gray-500">
+                    <div className="text-center mt-8 text-black">
                         <p>Please select "Match by State" and a number of cards to begin.</p>
                     </div>
                 )}    

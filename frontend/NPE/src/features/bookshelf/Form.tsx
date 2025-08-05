@@ -93,15 +93,15 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
     return (
         <div>
             <form
-                className="border-4 border-kobicha"
+                className="border-4 border-kobicha bg-almond p-4"
                 onSubmit={handleSubmit}>
-                <div className='text-center'>
-                    <h3>Leave a book recommendation for Naomi!</h3>
-                    <p>Leave your stamp on my website in the form of a book recommendation!</p>
+                <div className='text-center text-sm'>
+                    <p className="border-b-white border-b-2 border-dotted p-2">Have you ever read a memorable adventure story and it just stuck with you?<br /></p>
+                    <p className="border-b-white border-b-2 border-dotted p-2">Leave your book recommendation on this website so that other people can enjoy it too!<br /></p>
                 </div>
 
                 <div
-                    className='border-b-4 border-kobicha'
+                    className='border-b-4 border-kobicha text-xs p-2 text-center'
                 >
                     <label htmlFor="title">What is the title of your book rec?<br /></label>
                     <input
@@ -112,12 +112,12 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                         value={formData.title}
                         onChange={handleChange}
                         required
-                        className='bg-almond w-full'
+                        className='bg-mossGreen w-full'
                     />
                 </div>
 
                 <div
-                    className='border-b-4 border-kobicha'
+                    className='border-b-4 border-kobicha text-xs p-2 text-center'
                     >
                     <label htmlFor="author">Who is the author of the book?<br /></label>
                     <input
@@ -127,14 +127,14 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                         value={formData.author}
                         onChange={handleChange}
                         required
-                        className="bg-almond w-full"
+                        className="bg-mossGreen w-full"
                     />
                 </div>
                 <div
-                    className='border-b-4 border-kobicha p-2'
+                    className='border-b-4 border-kobicha p-2 text-xs text-center'
                     >
-                    <label>What is the genre(s) for the book?<br /></label>
-                    <div className="flex flex-wrap mt-2  p-1 gap-1 text-s">
+                    <label>What is the genre(s) for this book?<br /></label>
+                    <div className="flex flex-wrap mt-2  p-1 gap-1 text-xs">
                         {allGenres.map((genre) => (
                             <div key={genre.id}>
                                 <input
@@ -152,9 +152,9 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                 
 
                 <div
-                    className='border-b-4 border-kobicha'
+                    className='border-b-4 border-kobicha text-xs p-2 text-center'
                     >
-                    <label htmlFor="note">Leave a note for Naomi!<br /></label>
+                    <label htmlFor="note">Why are you recommending this book?<br /></label>
                     <textarea
                         id="note"
                         name="note"
@@ -164,12 +164,12 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                         required
                         minLength={3}
                         maxLength={200}
-                        className="bg-almond text-kobicha h-full w-full"
+                        className="bg-mossGreen text-black h-full w-full"
                     />
                 </div>
 
                 <div
-                    className='border-b-4 border-kobicha'
+                    className='border-b-4 border-kobicha text-xs p-2 text-center'
                     >
                     <label htmlFor="name">Enter your name:<br /></label>
                     <input
@@ -179,13 +179,13 @@ const Form: React.FC<FormProps> = ({ book, onFormSubmit }) => {
                         value={formData.name || ''} // Handle potential undefined value
                         onChange={handleChange}
                         required
-                        className="bg-almond text-kobicha h-full w-full"
+                        className="bg-mossGreen text-kobicha h-full w-full"
 
                     />
                 </div>
 
                 <div
-                    className="bg-kobicha"
+                    className="bg-mossGreen justify-center text-center"
                 >
                     <CustomButton type="submit">
                         {book?.id ? 'Save Changes' : 'Add Book'}
