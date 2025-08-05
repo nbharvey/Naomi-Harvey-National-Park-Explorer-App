@@ -66,7 +66,6 @@ const Bookshelf: React.FC = () => {
 
     //handler for update mode of form
     const handleUpdateBook = (bookFormData: NewBookData) => {
-        console.log("Bookshelf's handleUpdateBook called");
         if (editingBook) {
             const bookToUpdate: BookData = {
                 id: editingBook.id,

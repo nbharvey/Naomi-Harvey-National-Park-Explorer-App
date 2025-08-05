@@ -83,7 +83,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
     >
     <DndProvider backend={HTML5Backend}>
     <div className="text-center pr-10 pl-10 pt-10">
-    <h2 className="text-xl font-heading">National Park Matching Game</h2>
+    <h2 className="text-xl font-heading  bg-white/90 rounded p-4">National Park Matching Game</h2>
       </div>
 
       <div className="flex flex-wrap justify-center p-4 gap-4">
@@ -93,7 +93,6 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
         options={["Match by State", "Match by Popular Attraction"]}
         onSelect={(opt) => {
           setSelectedGame(opt as string);
-          console.log("Game type:", opt);
         }}
       />
 
@@ -102,7 +101,6 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
         options={[12, 24, 36]}
         onSelect={(opt) => {
           setCardCount(Number(opt));
-          console.log("Card count:", opt);
         }}
       />
       </div>
@@ -126,7 +124,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
                           </div>
           
                         {/* States Column - Renders from the `gameStates` list */}
-                        <div className="flex-1 p-4 bg-white/90 rounded-xl shadow-lg">
+                        <div className="flex-1 p-4 bg-white/70 rounded-xl shadow-lg">
                             <h3 className="text-xl font-bold text-center mb-4 text-black">States</h3>
                             <div className="flex flex-wrap justify-center gap-4">
                                 {gameStates.map((parkData) => (
@@ -176,7 +174,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 
                 ) : (
                     <div className="text-center p-2">
-                        <p className="">Select a game type and a number of cards to begin.</p>
+                        <p className=" bg-white/70 rounded p-4">Select a game type and a number of cards to begin.</p>
                     </div>
                 )}    
   
