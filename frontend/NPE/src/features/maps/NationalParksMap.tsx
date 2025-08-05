@@ -5,7 +5,6 @@ import type { FeatureCollection, Point as GeoJsonPoint } from 'geojson';
 import axios from 'axios';
 import 'leaflet/dist/leaflet.css';
 
-//structure for park properties
 interface ParkProperties {
     name: string;
     description: string;
@@ -13,7 +12,6 @@ interface ParkProperties {
     website_url?: string;
 }
 
-// structure for a single park from  NPS API 
 interface NpsPark {
     id: string;
     fullName: string;
@@ -29,11 +27,14 @@ interface NpsPark {
 }
 
 const nationalParkIcon = new Icon({
-    iconUrl: '/images/random.png',
+    iconUrl: '/images/marker.png',
     iconSize: [40, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
 });
+
+const attributionText = 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC';
+
 
 const NationalParksMap: React.FC = () => {
     const [parksData, setParksData] = useState<FeatureCollection<GeoJsonPoint, ParkProperties>>({
@@ -44,44 +45,37 @@ const NationalParksMap: React.FC = () => {
     useEffect(() => {
         const fetchParkData = async () => {
             const apiKey = import.meta.env.VITE_NPS_API_KEY;
-            
             const url = `https://developer.nps.gov/api/v1/parks?limit=500&api_key=${apiKey}`;
 
             try {
                 const response = await axios.get<{ data: NpsPark[] }>(url);
                 const npsParks = response.data.data;
-
                 const formattedFeatures = npsParks
-                    // ensure park has coordinates and at least one image before processing
                     .filter(park =>
                         park.designation === "National Park" &&
                         park.latitude &&
-                        park.longitude)
-                    .map(park => {
-                        const imageURL = (park.images && park.images.length > 0)
-                            ? park.images[0].url
-                            : './images/random.png';
-
-                    return {   
+                        park.longitude &&
+                        park.images &&
+                        park.images.length > 0
+                    )
+                    .map(park => ({
                         type: "Feature" as const,
                         properties: {
                             name: park.fullName,
                             description: park.description,
-                            image_url: imageURL,
+                            image_url: park.images[0].url,
                             website_url: park.url,
                         },
                         geometry: {
                             type: "Point" as const,
                             coordinates: [parseFloat(park.longitude), parseFloat(park.latitude)],
-                            },
-                        } 
-                    });
+                        },
+                    }));
 
                 setParksData({
                     type: "FeatureCollection",
                     features: formattedFeatures,
                 });
-
             } catch (error) {
                 console.error("Error fetching National Park data:", error);
             }
@@ -91,8 +85,8 @@ const NationalParksMap: React.FC = () => {
     }, []);
 
     return (
-        <div className="flex p-4 justify-center">
-            <div className="h-[70vh] w-full rounded-xl shadow-2xl overflow-hidden">
+        <div className="w-11/12 mx-auto flex bg-green p-4 justify-center rounded-xl">
+            <div className="h-[70vh] w-11/12 rounded-xl shadow-2xl overflow-hidden">
                 <MapContainer
                     center={[39.8283, -98.5795]}
                     zoom={4}
@@ -100,25 +94,25 @@ const NationalParksMap: React.FC = () => {
                     className="h-full w-full z-0"
                 >
                     <TileLayer
-                        attribution='Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC'
                         url='https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}'
                     />
 
-                    {parksData.features.map((parkFeature, index) => {
+                    {parksData.features.map((parkFeature) => {
                         const { name, description, image_url, website_url } = parkFeature.properties;
                         const [longitude, latitude] = parkFeature.geometry.coordinates;
 
                         return (
                             <Marker
-                                key={parkFeature.properties.name + index}
+                                key={name}
                                 position={[latitude, longitude]}
                                 icon={nationalParkIcon}
                                 eventHandlers={{
-                                    mouseover: (e) => e.target.openPopup(),
-                                    mouseout: (e) => e.target.closePopup(),
+                                    click: (e) => {
+                                        e.target.openPopup();
+                                    },
                                 }}
                             >
-                                <Popup closeButton={false} autoPan={true}>
+                                <Popup closeButton={true} autoPan={true}>
                                     <div className="p-1 bg-white rounded-lg shadow-lg max-w-xs text-sm leading-tight font-sans">
                                         <h3 className="mt-0 mb-2 text-base font-semibold text-gray-800">{name}</h3>
                                         {image_url && (
@@ -143,6 +137,13 @@ const NationalParksMap: React.FC = () => {
                         );
                     })}
                 </MapContainer>
+                <div>
+                    <p 
+                className="text-xs text-black mt-2"
+                dangerouslySetInnerHTML={{ __html: attributionText }}
+                    />
+                </div>
+                
             </div>
         </div>
     );
