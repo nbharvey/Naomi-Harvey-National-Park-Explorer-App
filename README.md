@@ -18,7 +18,8 @@ National Parks Explorer is a personal portfolio project designed to be your digi
 
 * **Polished Wireframes:** [Link to Polished Wireframes]([[https://www.google.com/search?q=https://www.figma.com/file/your-wireframe-link-here](https://docs.google.com/document/d/1xK77lc6x05MJZkXi96MF8ojhl1eymbb8RqrVHKPKcPI/edit?tab=t.0)](https://docs.google.com/document/d/1xK77lc6x05MJZkXi96MF8ojhl1eymbb8RqrVHKPKcPI/edit?tab=t.0))
 
-* **Entity-Relationship Diagram (ERD):** [Link to Polished ERD on Lucidchart/Draw.io/etc.]([https://www.google.com/search?q=https://www.lucidchart.com/documents/view/your-erd-link-here](https://docs.google.com/document/d/1xK77lc6x05MJZkXi96MF8ojhl1eymbb8RqrVHKPKcPI/edit?tab=t.0))
+* **Entity-Relationship Diagram (ERD):** [Link to Polished ERD](https://www.figma.com/board/8XXVZlcd3bWvOlJSUqFuf4/ERD?node-id=0-1&p=f&t=KKCkIZPtfMIM4fBZ-0)
+
 
 ## Tech Stack
 
