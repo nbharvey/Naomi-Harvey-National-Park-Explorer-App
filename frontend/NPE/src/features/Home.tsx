@@ -14,17 +14,21 @@ const Home = () => {
       /> */}
 
       {/* New Section: Page Content Below Hero */}
-      <div className="flex flex-col lg:flex-row px-4 py-8 gap-6 max-w-7xl mx-auto">
+      <div
+        style={{
+          backgroundImage: "url('/images/sunsetMountains.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.9,
+        }}
+        className="flex flex-col lg:flex-row px-4 py-8 gap-6 max-w-7xl mx-auto">
         {/* Left Sidebar Content */}
         <aside className="lg:w-1/4 space-y-6">
-          <div className="bg-green shadow rounded-lg p-4">
-            <h1 className="font-bold text-2xl text-white text-center mb-2">Welcome to <br />National Parks Explorer</h1>
-            {/* <ul className="text-sm text-gray-700 space-y-1">
-              <li>🥾 Pack layers</li>
-              <li>🦺 Stay on trail</li>
-              <li>🚰 Bring plenty of water</li>
-              <li>📵 Download offline maps</li>
-            </ul> */}
+          <div
+            className="shadow rounded-lg p-4">
+            <h1 className="font-bold text-2xl text-black text-center mb-2">Welcome to <br />National Parks Explorer</h1>
+          
           </div>
 
           <div className="bg-white shadow rounded-lg p-4">

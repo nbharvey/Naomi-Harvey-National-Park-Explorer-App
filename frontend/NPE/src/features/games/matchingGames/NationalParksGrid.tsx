@@ -72,9 +72,17 @@ const handleMatch = (parkId: number, stateId: number) => {
 const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 
   return (
+    <div
+      style={{
+        backgroundImage: "url('/images/treetops.jpg')",
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.9,
+    }}>
     <DndProvider backend={HTML5Backend}>
-    <div>
-        <h2 className='flex flex-wrap justify-center gap-8 p-4 text-xl bg-mossGreen text-black'>National Park Matching Game</h2>
+    <div className="text-center pr-10 pl-10 pt-10">
+    <h2 className="text-xl font-bold">National Park Matching Game</h2>
       </div>
 
       <div className="flex flex-wrap justify-center gap-8 p-4">
@@ -172,6 +180,7 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
                 )}    
   
       </DndProvider>
+      </div>
   );
 }
 

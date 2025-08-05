@@ -5,18 +5,30 @@ const MapsHome = () => {
 
     return (
         <>
-            <div className="w-full min-h-screen bg-green">
-                <h1 className='font-bold text-3xl text-center pt-4 pb-4 text-white'>Maps of USA National Parks</h1>
-                <p className="text-center text-white">Click on an arrowhead to view information about the 63 USA National Parks.</p>
-                {/*TODO: implement filter options on map at a later time*/}
+            <div
+                style={{
+                    backgroundImage: "url('/images/nightSky.jpg')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    opacity: 0.9,
+                }}
+            >
+                <div className="text-center pr-10 pl-10 pt-10">
+                <h2 className="text-xl font-bold text-white">Maps of USA National Parks</h2>
+                <p className="text-center text-white">Click on an arrowhead to view information about the 63 USA National Parks</p>
+            </div>
+                <NationalParksMap />
+                 {/*TODO: implement filter options on map at a later time*/}
                 {/* <div className="w-full flex flex-wrap justify-center gap-8 p-4">
                 <BasicMenu label={"Designation"} options={['National Park', 'National Battlefield', 'National Monument']} />
                 <BasicMenu label={"State/Territory"} options={['Arizona', 'Arkansas', 'Alabama']} />
                     
                     </div> */}
-                <NationalParksMap />
             </div>
             </>
+               
+           
             
     )
 }

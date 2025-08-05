@@ -88,9 +88,9 @@ const Bookshelf: React.FC = () => {
                     backgroundImage: "url('/images/blue_mountains.jpg')",
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
+                    backgroundRepeat: 'no-repeat',
+                    opacity: 0.9,
                 }}
-                // className="bg-mossGreen"
             >
             <div className="text-center pr-10 pl-10 pt-10">
                         <h2 className="text-xl font-bold">The Ultimate National Park Bookshelf</h2>

@@ -85,8 +85,8 @@ const NationalParksMap: React.FC = () => {
     }, []);
 
     return (
-        <div className="w-11/12 mx-auto flex bg-green p-4 justify-center rounded-xl">
-            <div className="h-[70vh] w-11/12 rounded-xl shadow-2xl overflow-hidden">
+        <div className="w-11/12 mx-auto flex p-4 justify-center rounded-xl">
+            <div className="h-[70vh] w-11/12 rounded-xl shadow-2xl  border-black border-4 overflow-hidden">
                 <MapContainer
                     center={[39.8283, -98.5795]}
                     zoom={4}

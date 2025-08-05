@@ -29,13 +29,13 @@ export function NavbarDefault() {
   ];
  
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-4">
+    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center ">
       {navLinks.map(({ name, path }) => (
         <Typography
           key={name}
           as="li"
           variant="small"
-          color="blue-gray"
+          color="black"
           className="p-1 font-medium"
         >
           <Link to={path} className="flex items-center">
@@ -108,8 +108,9 @@ export function NavbarDefault() {
         </IconButton>
       </div>
       <Collapse open={openNav}>
-        <div className="container mx-auto">
-          {navList}
+      {navList}
+        {/* <div className="container mx-auto"> */}
+          
           {/*TODO: implement sign-in and create-account button functionality*/}
           {/* <div className="flex items-center gap-x-1">
             <CustomButton fullWidth variant="text" size="sm" className="">
@@ -119,7 +120,7 @@ export function NavbarDefault() {
               <span>Sign in</span>
             </CustomButton>
           </div> */}
-        </div>
+        {/* </div> */}
       </Collapse>
     </Navbar>
   );
