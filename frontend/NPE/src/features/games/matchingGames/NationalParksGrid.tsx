@@ -74,18 +74,20 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
   return (
     <div
       style={{
-        backgroundImage: "url('/images/treetops.jpg')",
+        backgroundImage: "url('/images/yellowstone.jpg')",
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         opacity: 0.9,
-    }}>
+      }}
+      className="min-h-screen"
+    >
     <DndProvider backend={HTML5Backend}>
     <div className="text-center pr-10 pl-10 pt-10">
     <h2 className="text-xl font-heading">National Park Matching Game</h2>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8 p-4">
+      <div className="flex flex-wrap justify-center p-4 gap-4">
 
       <BasicMenu
         label="Choose Game Type"
@@ -174,8 +176,8 @@ const parksToDisplay = gameParks.filter(p => !matchedIds.includes(p.id));
 </div>
 
                 ) : (
-                    <div className="text-center mt-4 bg-mossGreen p-2 text-black">
-                        <p>Select a game type and a number of cards to begin.</p>
+                    <div className="text-center p-2">
+                        <p className="">Select a game type and a number of cards to begin.</p>
                     </div>
                 )}    
   

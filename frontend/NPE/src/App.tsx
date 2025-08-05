@@ -9,7 +9,8 @@ import { FooterWithSitemap } from './components/Footer.tsx';
 import PageNotFound from './components/404Page.tsx';
 import NationalParksGrid from './features/games/matchingGames/NationalParksGrid.tsx';
 import MapsHome from './features/maps/MapsHome.tsx';
-
+import About from './features/About.tsx';
+import OurTeam from './features/OurTeam.tsx';
 
 
 function App() {
@@ -17,21 +18,26 @@ function App() {
   return (
     <>
       <DndProvider backend={HTML5Backend}>
+  <div className="flex flex-col min-h-screen">
+    
       <NavbarDefault />
+    <main className="flex-grow">
 
       <Routes>
         <Route path="/" element={<Home />} />
-          {/* <Route path="/games" element={<Games />} /> */}
           <Route path="/games/parks-matching-game" element={<NationalParksGrid />} />"
 
           <Route path="/bookshelf" element={<Bookshelf />} />
           <Route path="/maps" element={<MapsHome />} />
 
+          <Route path="/about" element={<About />} />
+          <Route path="/team" element={<OurTeam />} />"
+              
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        
+    </main>
       <FooterWithSitemap />
-
+  </div>
   </DndProvider>
     </>
   )
