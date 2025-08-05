@@ -26,7 +26,6 @@ const initialParks = nationalParksData.map(a => ({ sort: Math.random(), value: a
 function NationalParksGrid() {
   const [selectedGame, setSelectedGame] = useState("None");
   const [cardCount, setCardCount] = useState(0);
-
   const [gameParks, setGameParks] = useState<UsNationalPark[]>([]);
   const [gameStates, setGameStates] = useState<UsNationalPark[]>([]);
   const [gameAttractions, setGameAttractions] = useState<UsNationalPark[]>([]);
