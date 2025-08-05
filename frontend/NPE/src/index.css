@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "NaomiFont2";
-  src: url("NaomiFont2.woff");
-  src: url("./assets/fonts/NaomiFont2.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "DynaPuff", "Literata", sans-serif;
 }
