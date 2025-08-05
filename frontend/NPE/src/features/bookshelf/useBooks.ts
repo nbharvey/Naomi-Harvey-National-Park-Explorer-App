@@ -90,39 +90,11 @@ function useBooks() {
         }
     };
 
-
-    /**************************BEGIN OLD LOGIC************************ */
-    // const addOrUpdateBook = (book: BookData): void => {
-    //     const bookToSave = { ...book, isEditing: false };
-
-    //     if (!bookToSave.spineColor) {
-    //         bookToSave.spineColor = '#6B2F4E'; // Default spine color
-        // }
-
-        // Check if a user-added book with the same ID already exists
-        // const bookExists = currentBooks.some((b) => b.name && b.id === bookToSave.id);
-
-        // if (bookExists) {
-        //     updateBook(bookToSave);
-        // } else {
-            // Add the new book to the array
-    //         setCurrentBooks((prevBooks) => [...prevBooks, bookToSave]);
-    //     }
-    // };
-
     /**
      * Updates a specific book in the state
      * @param updatedBook - The book with updated properties
      */
-    // const updateBook = (updatedBook: BookData): void => {
-    //     setCurrentBooks((prevBooks) =>
-    //         prevBooks.map(book =>
-    //             book.id === updatedBook.id ? { ...book, ...updatedBook } : book
-    //         )
-    //     );
-    // };
-    /**************************END OLD LOGIC************************ */
-
+   
     //set book's isEditing to true
     const setEditingState = (bookToEdit: BookData) => {
         setCurrentBooks((prevBooks) =>
@@ -135,25 +107,17 @@ function useBooks() {
     
     }
 
-
     // useMemo to find the book currently being edited.
     // Returns the book object or null if no book is being edited.
     const editingBook = useMemo<BookData | null>(() => {
         return currentBooks.find((b) => b.name && b.isEditing) ?? null;
     }, [currentBooks]);
 
-    /**************************BEGIN OLD LOGIC******************************* */
     /**
      * Deletes a book from the state
      * @param bookToDelete - The book object to remove
      */
-    // const deleteBook = (bookToDelete: BookData): void => {
-    //     setCurrentBooks((prevBooks) =>
-    //         prevBooks.filter((b) => b.id !== bookToDelete.id)
-    //     );
-    // };
-    /**************************END OLD LOGIC************************ */
-
+    
     //delete book by making a DELETE request
     const deleteBook = async (bookToDelete: BookData): Promise<void> => {
         try {
@@ -167,7 +131,6 @@ function useBooks() {
         }
     };
 
-    
     // Return the state and functions to be used by components
     return {
         currentBooks,
