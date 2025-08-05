@@ -44,7 +44,6 @@ public class DataSeeder {
                     bookRepository.save(book);
                 }
 
-                System.out.println("Books seeded successfully.");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -52,7 +51,6 @@ public class DataSeeder {
     }
 
     private void seedGenres() {
-        System.out.println("Seeding genres...");
         List<String> genreNames = List.of(
                 "Adventure Fiction", "Mystery/Thriller", "Historical Fiction", "Romance",
                 "Young Adult", "Autobiography", "Memoir", "Travel", "Exploration",
